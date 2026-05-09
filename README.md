@@ -6,15 +6,18 @@ Vector Engine API helps AI builders test chatbots, RAG apps, agents, and side
 projects with one API key. If your app already uses the OpenAI SDK, you can
 usually switch by changing the `base_url` / `baseURL` and API key.
 
-## 2026-05-09 Builder Promotion
+## 2026-05-09 Integration Update
 
-New builders can unlock API credits:
+Today's update adds a cleaner quickstart path for builders who want to test an
+OpenAI-compatible API relay without changing application logic:
 
-- $5 after email verification
-- +$10 after the first successful API call
+- OpenAI SDK examples for Python and Node.js
+- Environment-variable based examples for curl, Python, and JavaScript
+- A Postman collection with ready-to-run variables
+- A short migration path for apps that already use `base_url` / `baseURL`
 
 Start here:
-https://www.vectronode.com?aff=nPRB&utm_source=github&utm_medium=repo&utm_campaign=quickstart
+https://www.vectronode.com?aff=nPRB&utm_source=github&utm_medium=repo&utm_campaign=integration-update
 
 ## Why Vector Engine API
 

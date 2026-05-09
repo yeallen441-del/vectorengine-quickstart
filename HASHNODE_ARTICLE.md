@@ -1,48 +1,40 @@
-# How to Connect an OpenAI SDK App to Vector Engine API
+# Migrating an OpenAI SDK App to an API Relay
 
-If your project already uses the OpenAI SDK, you can connect it to Vector Engine
-API by changing two things: the API key and the base URL.
+Yesterday's post covered the basic Vector Engine API offer. Today's note is
+more practical: how to move an existing OpenAI SDK integration to an
+OpenAI-compatible API relay with the smallest possible code change.
 
-Vector Engine API gives builders one OpenAI-compatible API for GPT, Claude,
-Gemini, Llama, and DeepSeek, which makes it useful for chatbots, RAG apps,
-agents, demos, and side projects that need to test different model families
-without rewriting integration code.
+The useful part is that most apps already have the right abstraction. If your
+code uses the OpenAI SDK, you usually only need to change the API key and the
+base URL.
 
-## Today’s Builder Promotion
+## What Changes
 
-New builders can unlock API credits:
+In a direct OpenAI setup, the SDK sends requests to the default OpenAI endpoint.
+With Vector Engine API, you keep the same SDK shape and point it at:
 
-- $5 after email verification
-- +$10 after the first successful API call
-
-Start here:
-https://www.vectronode.com?aff=nPRB&utm_source=hashnode&utm_medium=article&utm_campaign=quickstart
-
-## Why Use an API Relay?
-
-An API relay is useful when you want:
-
-- One API key for multiple model providers
-- OpenAI-compatible request and response formats
-- A faster way to test models in the same app
-- Usage-based billing with card and USDT payment options
-- A quick setup for chatbots, RAG apps, and agents
-
-## Python Example
-
-Install the SDK:
-
-```bash
-pip install openai
+```text
+https://www.vectronode.com/v1
 ```
 
-Set your key:
+That means your existing chat completion flow can stay familiar:
 
-```bash
-export VECTOR_ENGINE_API_KEY="YOUR_API_KEY"
+- Same `messages` array
+- Same `model` field
+- Same `chat.completions.create` call
+- Same environment-variable based deployment pattern
+
+## Python Migration
+
+Before:
+
+```python
+from openai import OpenAI
+
+client = OpenAI(api_key="YOUR_OPENAI_KEY")
 ```
 
-Call the API:
+After:
 
 ```python
 import os
@@ -52,13 +44,17 @@ client = OpenAI(
     api_key=os.environ["VECTOR_ENGINE_API_KEY"],
     base_url="https://www.vectronode.com/v1",
 )
+```
 
+Then keep the request shape the same:
+
+```python
 response = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
         {
             "role": "user",
-            "content": "Explain API relays in one sentence.",
+            "content": "Explain API relay migration in one sentence.",
         }
     ],
 )
@@ -66,21 +62,19 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-## Node.js Example
+## Node.js Migration
 
-Install the SDK:
+Before:
 
-```bash
-npm install openai
+```js
+import OpenAI from "openai";
+
+const client = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 ```
 
-Set your key:
-
-```bash
-export VECTOR_ENGINE_API_KEY="YOUR_API_KEY"
-```
-
-Call the API:
+After:
 
 ```js
 import OpenAI from "openai";
@@ -89,13 +83,17 @@ const client = new OpenAI({
   apiKey: process.env.VECTOR_ENGINE_API_KEY,
   baseURL: "https://www.vectronode.com/v1",
 });
+```
 
+Then call chat completions as usual:
+
+```js
 const response = await client.chat.completions.create({
   model: "gpt-4o-mini",
   messages: [
     {
       role: "user",
-      content: "Explain API relays in one sentence.",
+      content: "Explain API relay migration in one sentence.",
     },
   ],
 });
@@ -103,7 +101,9 @@ const response = await client.chat.completions.create({
 console.log(response.choices[0].message.content);
 ```
 
-## curl Test
+## Validate with curl
+
+Before changing a production app, verify the key and endpoint with curl:
 
 ```bash
 curl https://www.vectronode.com/v1/chat/completions \
@@ -114,40 +114,32 @@ curl https://www.vectronode.com/v1/chat/completions \
     "messages": [
       {
         "role": "user",
-        "content": "Hello from Vector Engine API"
+        "content": "Reply with a short integration check message."
       }
     ]
   }'
 ```
 
-## Postman Test
+## Validate with Postman
 
-If you prefer testing without writing code, create a Postman request:
+I also prepared a Postman collection for quick testing. Set these variables:
 
-- Method: `POST`
-- URL: `https://www.vectronode.com/v1/chat/completions`
-- Header: `Authorization: Bearer YOUR_API_KEY`
-- Header: `Content-Type: application/json`
+- `base_url`: `https://www.vectronode.com`
+- `api_key`: your Vector Engine API key
+- `model`: `gpt-4o-mini`
 
-Body:
+Then run the `Chat Completions` request. This is a simple way to confirm that
+your key, model, and endpoint are working before you wire the relay into an app.
 
-```json
-{
-  "model": "gpt-4o-mini",
-  "messages": [
-    {
-      "role": "user",
-      "content": "Hello from Vector Engine API"
-    }
-  ]
-}
-```
+## When This Is Useful
 
-## Final Notes
+This migration pattern is useful for:
 
-Vector Engine API is designed for builders who want to move quickly: one key,
-OpenAI-compatible endpoints, and access to multiple model families from one
-integration.
+- Chatbot demos
+- RAG prototypes
+- Agent experiments
+- Multi-model testing
+- Apps that already use OpenAI-compatible request formats
 
 Start here:
-https://www.vectronode.com?aff=nPRB&utm_source=hashnode&utm_medium=article&utm_campaign=quickstart
+https://www.vectronode.com?aff=nPRB&utm_source=hashnode&utm_medium=article&utm_campaign=integration-update

@@ -1,7 +1,7 @@
 {
   "info": {
     "name": "Vector Engine API Quickstart",
-    "description": "OpenAI-compatible API quickstart for Vector Engine API. New builders can unlock $5 after email verification and +$10 after the first successful API call. Start here: https://www.vectronode.com?aff=nPRB&utm_source=postman&utm_medium=collection&utm_campaign=quickstart",
+    "description": "OpenAI-compatible API quickstart for Vector Engine API. Import this collection, set `api_key`, and run the chat completions request to validate your integration. Start here: https://www.vectronode.com?aff=nPRB&utm_source=postman&utm_medium=collection&utm_campaign=integration-update",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
