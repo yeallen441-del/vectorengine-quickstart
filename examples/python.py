@@ -1,9 +1,11 @@
+import os
+
 import requests
 
 response = requests.post(
     "https://www.vectronode.com/v1/chat/completions",
     headers={
-        "Authorization": "Bearer YOUR_API_KEY",
+        "Authorization": f"Bearer {os.environ['VECTOR_ENGINE_API_KEY']}",
         "Content-Type": "application/json",
     },
     json={

@@ -1,0 +1,62 @@
+{
+  "info": {
+    "name": "Vector Engine API Quickstart",
+    "description": "OpenAI-compatible API quickstart for Vector Engine API. New builders can unlock $5 after email verification and +$10 after the first successful API call. Start here: https://www.vectronode.com?aff=nPRB&utm_source=postman&utm_medium=collection&utm_campaign=quickstart",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://www.vectronode.com"
+    },
+    {
+      "key": "api_key",
+      "value": "YOUR_API_KEY",
+      "type": "secret"
+    },
+    {
+      "key": "model",
+      "value": "gpt-4o-mini"
+    }
+  ],
+  "item": [
+    {
+      "name": "Chat Completions",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"{{model}}\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a concise API assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Hello from Vector Engine API. Reply in one short sentence.\"\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/v1/chat/completions",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "v1",
+            "chat",
+            "completions"
+          ]
+        },
+        "description": "Run this request after setting `api_key`. It uses the OpenAI-compatible `/v1/chat/completions` endpoint."
+      },
+      "response": []
+    }
+  ]
+}
