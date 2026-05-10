@@ -61,6 +61,16 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Python OpenAI SDK](examples/openai_sdk_python.py)
 - [Node.js OpenAI SDK](examples/openai_sdk_node.mjs)
 
+## Migration Guide
+
+Already using the OpenAI SDK? See [MIGRATION.md](MIGRATION.md) for the
+copy-paste checklist:
+
+- keep your existing chat-completions code shape
+- switch `base_url` / `baseURL` to `https://www.vectronode.com/v1`
+- replace the API key with `VECTOR_ENGINE_API_KEY`
+- test the same request in Postman before changing production code
+
 ## OpenAI SDK Compatibility
 
 Use the same SDK shape you already know:
