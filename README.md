@@ -30,6 +30,16 @@ need fast answers when something fails:
 - `model not found` model-name checks
 - Postman verification before changing production code
 
+## 2026-05-11 Global and Chinese LLM Update
+
+This update adds a new guide for builders comparing global models and Chinese
+LLMs through one OpenAI-compatible gateway:
+
+- [Global and Chinese LLM API gateway guide](GLOBAL_CHINESE_LLM_API.md)
+- GPT, Claude, Gemini, DeepSeek, and Qwen testing strategy
+- Python and Node.js examples for comparing two model choices
+- Use cases for chatbots, agents, RAG apps, and SaaS AI features
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -71,6 +81,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [JavaScript fetch](examples/javascript.js)
 - [Python OpenAI SDK](examples/openai_sdk_python.py)
 - [Node.js OpenAI SDK](examples/openai_sdk_node.mjs)
+- [Global and Chinese LLM gateway guide](GLOBAL_CHINESE_LLM_API.md)
 
 ## Migration Guide
 
