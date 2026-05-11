@@ -19,6 +19,17 @@ OpenAI-compatible API relay without changing application logic:
 Start here:
 https://www.vectronode.com?aff=nPRB&utm_source=github&utm_medium=repo&utm_campaign=integration-update
 
+## 2026-05-11 Troubleshooting Update
+
+Today's GitHub update is for developers who are already testing an API relay and
+need fast answers when something fails:
+
+- [OpenAI SDK migration troubleshooting](TROUBLESHOOTING.md)
+- `401 Unauthorized` API key checks
+- `404 Not Found` base URL checks
+- `model not found` model-name checks
+- Postman verification before changing production code
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -70,6 +81,9 @@ copy-paste checklist:
 - switch `base_url` / `baseURL` to `https://www.vectronode.com/v1`
 - replace the API key with `VECTOR_ENGINE_API_KEY`
 - test the same request in Postman before changing production code
+
+If a migrated request fails, use [TROUBLESHOOTING.md](TROUBLESHOOTING.md) to
+check the most common setup issues first.
 
 ## OpenAI SDK Compatibility
 
