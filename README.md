@@ -40,6 +40,17 @@ LLMs through one OpenAI-compatible gateway:
 - Python and Node.js examples for comparing two model choices
 - Use cases for chatbots, agents, RAG apps, and SaaS AI features
 
+## 2026-05-14 Production Checklist Update
+
+Today's GitHub update is for teams preparing to use an OpenAI-compatible AI API
+gateway in production:
+
+- [Production checklist for an AI API gateway](PRODUCTION_CHECKLIST.md)
+- primary and fallback model planning
+- global and Chinese LLM testing notes
+- Postman verification before release
+- logging, latency, cost, and error-handling guardrails
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -82,6 +93,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Python OpenAI SDK](examples/openai_sdk_python.py)
 - [Node.js OpenAI SDK](examples/openai_sdk_node.mjs)
 - [Global and Chinese LLM gateway guide](GLOBAL_CHINESE_LLM_API.md)
+- [Production checklist](PRODUCTION_CHECKLIST.md)
 
 ## Migration Guide
 
