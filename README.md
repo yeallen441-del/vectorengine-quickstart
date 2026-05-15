@@ -51,6 +51,17 @@ gateway in production:
 - Postman verification before release
 - logging, latency, cost, and error-handling guardrails
 
+## 2026-05-15 AI API Cost Control Update
+
+Today's update focuses on developers who want lower AI API spend without
+rewriting their OpenAI SDK integration:
+
+- [AI API cost control guide](COST_CONTROL.md)
+- model selection by feature and user tier
+- token limits for chat, RAG, agents, and background jobs
+- low-cost fallback patterns for GPT, Claude, Gemini, DeepSeek, and Qwen
+- Postman verification before scaling traffic
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -94,6 +105,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Node.js OpenAI SDK](examples/openai_sdk_node.mjs)
 - [Global and Chinese LLM gateway guide](GLOBAL_CHINESE_LLM_API.md)
 - [Production checklist](PRODUCTION_CHECKLIST.md)
+- [AI API cost control](COST_CONTROL.md)
 
 ## Migration Guide
 
