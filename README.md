@@ -106,6 +106,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Global and Chinese LLM gateway guide](GLOBAL_CHINESE_LLM_API.md)
 - [Production checklist](PRODUCTION_CHECKLIST.md)
 - [AI API cost control](COST_CONTROL.md)
+- [Multi-model routing guide](MODEL_ROUTING.md)
 
 ## Migration Guide
 
