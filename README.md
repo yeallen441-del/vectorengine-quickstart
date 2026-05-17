@@ -62,6 +62,17 @@ rewriting their OpenAI SDK integration:
 - low-cost fallback patterns for GPT, Claude, Gemini, DeepSeek, and Qwen
 - Postman verification before scaling traffic
 
+## 2026-05-17 AI API Observability Update
+
+Today's update is for teams that need to monitor AI API usage after the first
+integration works:
+
+- [AI API observability guide](API_OBSERVABILITY.md)
+- latency, token usage, error category, and fallback tracking
+- Python and Node.js logging examples
+- production dashboard metrics for OpenAI-compatible gateways
+- monitoring notes for GPT, Claude, Gemini, DeepSeek, Qwen, and other models
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -107,6 +118,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Production checklist](PRODUCTION_CHECKLIST.md)
 - [AI API cost control](COST_CONTROL.md)
 - [Multi-model routing guide](MODEL_ROUTING.md)
+- [AI API observability](API_OBSERVABILITY.md)
 
 ## Migration Guide
 
