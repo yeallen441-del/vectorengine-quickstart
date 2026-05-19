@@ -73,6 +73,17 @@ integration works:
 - production dashboard metrics for OpenAI-compatible gateways
 - monitoring notes for GPT, Claude, Gemini, DeepSeek, Qwen, and other models
 
+## 2026-05-19 Model Selection Matrix Update
+
+Today's update helps developers compare GPT, Claude, Gemini, DeepSeek, Qwen,
+and other models before choosing a default production model:
+
+- [Model selection matrix](MODEL_SELECTION_MATRIX.md)
+- evaluation dimensions for quality, latency, cost, context, and JSON output
+- recommended model groups for reasoning, daily usage, utility tasks, and
+  Chinese-language workflows
+- OpenAI SDK example for testing models through one gateway
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -119,6 +130,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI API cost control](COST_CONTROL.md)
 - [Multi-model routing guide](MODEL_ROUTING.md)
 - [AI API observability](API_OBSERVABILITY.md)
+- [Model selection matrix](MODEL_SELECTION_MATRIX.md)
 
 ## Migration Guide
 
