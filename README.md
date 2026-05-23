@@ -84,6 +84,18 @@ and other models before choosing a default production model:
   Chinese-language workflows
 - OpenAI SDK example for testing models through one gateway
 
+## 2026-05-23 AI API Testing Checklist Update
+
+Today's update is for developers preparing to test an OpenAI-compatible AI API
+gateway before production traffic:
+
+- [AI API integration testing checklist](AI_API_TESTING_CHECKLIST.md)
+- base URL, authentication, SDK compatibility, and Postman verification
+- structured JSON output checks for production workflows
+- latency, retry, fallback, and token-usage testing
+- model comparison notes for GPT, Claude, Gemini, DeepSeek, Qwen, and Chinese
+  LLM use cases
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -131,6 +143,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Multi-model routing guide](MODEL_ROUTING.md)
 - [AI API observability](API_OBSERVABILITY.md)
 - [Model selection matrix](MODEL_SELECTION_MATRIX.md)
+- [AI API integration testing checklist](AI_API_TESTING_CHECKLIST.md)
 
 ## Migration Guide
 
