@@ -96,6 +96,19 @@ gateway before production traffic:
 - model comparison notes for GPT, Claude, Gemini, DeepSeek, Qwen, and Chinese
   LLM use cases
 
+## 2026-05-25 Multimodal AI Gateway Update
+
+Today's update is for teams expanding from one chat API call into a multimodal
+AI platform:
+
+- [Multimodal AI API gateway guide](MULTIMODAL_AI_GATEWAY.md)
+- text, vision, image, audio, video, embeddings, reranking, and tool-call
+  planning
+- model coverage notes for GPT, Claude, Gemini, DeepSeek, Qwen, Doubao, Grok,
+  Midjourney, Kling, Flux, and other providers
+- product-feature mapping for choosing the right model type
+- rollout path for moving from one chat model to a multi-model gateway
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -144,6 +157,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI API observability](API_OBSERVABILITY.md)
 - [Model selection matrix](MODEL_SELECTION_MATRIX.md)
 - [AI API integration testing checklist](AI_API_TESTING_CHECKLIST.md)
+- [Multimodal AI API gateway guide](MULTIMODAL_AI_GATEWAY.md)
 
 ## Migration Guide
 
