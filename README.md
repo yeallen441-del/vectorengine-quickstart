@@ -109,6 +109,17 @@ AI platform:
 - product-feature mapping for choosing the right model type
 - rollout path for moving from one chat model to a multi-model gateway
 
+## 2026-05-26 Multi-Model AI API Gateway Update
+
+Today's update adds a developer SEO guide for teams that want one stable AI API
+platform for GPT, Claude, Gemini, DeepSeek, Qwen, and other model families:
+
+- [How to use a multi-model AI API gateway](MULTI_MODEL_AI_API_GATEWAY.md)
+- OpenAI-compatible API integration workflow
+- routing notes for AI agents, RAG apps, chatbots, and internal tools
+- FAQ for multi-model AI API, LLM API gateway, and chatbot API use cases
+- VectorNode registration path for developers who want to start testing
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -158,6 +169,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Model selection matrix](MODEL_SELECTION_MATRIX.md)
 - [AI API integration testing checklist](AI_API_TESTING_CHECKLIST.md)
 - [Multimodal AI API gateway guide](MULTIMODAL_AI_GATEWAY.md)
+- [How to use a multi-model AI API gateway](MULTI_MODEL_AI_API_GATEWAY.md)
 
 ## Migration Guide
 
