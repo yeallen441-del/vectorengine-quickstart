@@ -120,6 +120,17 @@ platform for GPT, Claude, Gemini, DeepSeek, Qwen, and other model families:
 - FAQ for multi-model AI API, LLM API gateway, and chatbot API use cases
 - VectorNode registration path for developers who want to start testing
 
+## 2026-05-27 Model Switching Guide Update
+
+Today's update adds a practical guide for developers building multi-model AI
+apps that need model testing, routing, and fallback behavior:
+
+- [Model switching guide for multi-model AI apps](MODEL_SWITCHING_GUIDE.md)
+- task-based model selection for chatbots, RAG apps, agents, and AI tools
+- OpenAI-compatible SDK setup with a VectorNode base URL
+- JavaScript examples for selecting models and adding fallback chains
+- measurement fields for latency, token usage, retries, and quality review
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -170,6 +181,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI API integration testing checklist](AI_API_TESTING_CHECKLIST.md)
 - [Multimodal AI API gateway guide](MULTIMODAL_AI_GATEWAY.md)
 - [How to use a multi-model AI API gateway](MULTI_MODEL_AI_API_GATEWAY.md)
+- [Model switching guide for multi-model AI apps](MODEL_SWITCHING_GUIDE.md)
 
 ## Migration Guide
 
