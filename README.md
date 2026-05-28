@@ -131,6 +131,19 @@ apps that need model testing, routing, and fallback behavior:
 - JavaScript examples for selecting models and adding fallback chains
 - measurement fields for latency, token usage, retries, and quality review
 
+## 2026-05-28 AI Workflow Gateway Update
+
+Today's update adds a GitHub guide for teams building AI agents, RAG
+applications, chatbots, and internal AI tools with one organized model access
+layer:
+
+- [AI workflow gateway for agents, RAG apps, and chatbots](AI_WORKFLOW_GATEWAY.md)
+- workflow-based routing for support chat, RAG answers, agent planning, code
+  help, JSON output, and multilingual replies
+- OpenAI-compatible SDK example with the VectorNode base URL
+- fallback planning for workflow-specific model choices
+- metrics for latency, token usage, retries, structured output, and quality
+
 ## Why Vector Engine API
 
 - Unified access to mainstream LLMs
@@ -182,6 +195,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Multimodal AI API gateway guide](MULTIMODAL_AI_GATEWAY.md)
 - [How to use a multi-model AI API gateway](MULTI_MODEL_AI_API_GATEWAY.md)
 - [Model switching guide for multi-model AI apps](MODEL_SWITCHING_GUIDE.md)
+- [AI workflow gateway for agents, RAG apps, and chatbots](AI_WORKFLOW_GATEWAY.md)
 
 ## Migration Guide
 
