@@ -1,7 +1,7 @@
 const response = await fetch("https://www.vectronode.com/v1/chat/completions", {
   method: "POST",
   headers: {
-    "Authorization": `Bearer ${process.env.VECTOR_ENGINE_API_KEY}`,
+    "Authorization": `Bearer ${process.env.VECTORNODE_API_KEY}`,
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
@@ -9,7 +9,7 @@ const response = await fetch("https://www.vectronode.com/v1/chat/completions", {
     messages: [
       {
         role: "user",
-        content: "Hello from Vector Engine API"
+        content: "Hello from VectorNode"
       }
     ]
   })

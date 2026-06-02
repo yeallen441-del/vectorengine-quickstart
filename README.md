@@ -1,10 +1,13 @@
-# Vector Engine API Quickstart
+# VectorNode API Quickstart
 
-One OpenAI-compatible API for GPT, Claude, Gemini, Llama, and DeepSeek.
+VectorNode is an AI model access platform for developers, AI builders, and
+automation workflows.
 
-Vector Engine API helps AI builders test chatbots, RAG apps, agents, and side
-projects with one API key. If your app already uses the OpenAI SDK, you can
-usually switch by changing the `base_url` / `baseURL` and API key.
+One API for the world's leading AI models. Access GPT, Claude, Gemini,
+DeepSeek, Qwen, and more through a unified, OpenAI-compatible API built for
+developers, AI apps, and automation workflows. If your app already uses the
+OpenAI SDK, you can usually switch by changing the `base_url` / `baseURL` and
+API key.
 
 ## 2026-05-09 Integration Update
 
@@ -144,35 +147,47 @@ layer:
 - fallback planning for workflow-specific model choices
 - metrics for latency, token usage, retries, structured output, and quality
 
-## Why Vector Engine API
+## 2026-06-02 Model Access Layer Update
 
-- Unified access to mainstream LLMs
+Today's GitHub update focuses on VectorNode as an AI model access platform for
+developers, AI builders, and automation workflows:
+
+- [VectorNode model access layer quickstart](MODEL_ACCESS_LAYER_QUICKSTART.md)
+- one API for GPT, Claude, Gemini, DeepSeek, Qwen, and other leading AI models
+- OpenAI-compatible JavaScript and Python SDK examples
+- workflow routing notes for AI apps, agents, RAG systems, chatbots, and
+  automation
+- production checks for API keys, base URL, model names, logging, and fallback
+  behavior
+
+## Why VectorNode
+
+- One API for the world's leading AI models
+- Unified access to GPT, Claude, Gemini, DeepSeek, Qwen, and more
 - OpenAI-compatible `/v1/chat/completions` endpoint
-- Quick API key setup
-- Usage-based pricing
-- Card and USDT payments
-- Built for chatbots, RAG apps, and agents
+- Developer-friendly setup for AI apps and automation workflows
+- Built for chatbots, RAG apps, agents, model testing, and model switching
 
 ## Quick Start
 
 Set your API key:
 
 ```bash
-export VECTOR_ENGINE_API_KEY="YOUR_API_KEY"
+export VECTORNODE_API_KEY="YOUR_API_KEY"
 ```
 
 Call the OpenAI-compatible endpoint:
 
 ```bash
 curl https://www.vectronode.com/v1/chat/completions \
-  -H "Authorization: Bearer $VECTOR_ENGINE_API_KEY" \
+  -H "Authorization: Bearer $VECTORNODE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "gpt-4o-mini",
     "messages": [
       {
         "role": "user",
-        "content": "Hello from Vector Engine API"
+        "content": "Hello from VectorNode"
       }
     ]
   }'
@@ -196,6 +211,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [How to use a multi-model AI API gateway](MULTI_MODEL_AI_API_GATEWAY.md)
 - [Model switching guide for multi-model AI apps](MODEL_SWITCHING_GUIDE.md)
 - [AI workflow gateway for agents, RAG apps, and chatbots](AI_WORKFLOW_GATEWAY.md)
+- [VectorNode model access layer quickstart](MODEL_ACCESS_LAYER_QUICKSTART.md)
 
 ## Migration Guide
 
@@ -204,7 +220,7 @@ copy-paste checklist:
 
 - keep your existing chat-completions code shape
 - switch `base_url` / `baseURL` to `https://www.vectronode.com/v1`
-- replace the API key with `VECTOR_ENGINE_API_KEY`
+- replace the API key with `VECTORNODE_API_KEY`
 - test the same request in Postman before changing production code
 
 If a migrated request fails, use [TROUBLESHOOTING.md](TROUBLESHOOTING.md) to
@@ -224,7 +240,7 @@ client = OpenAI(
 
 response = client.chat.completions.create(
     model="gpt-4o-mini",
-    messages=[{"role": "user", "content": "Hello from Vector Engine API"}],
+    messages=[{"role": "user", "content": "Hello from VectorNode"}],
 )
 
 print(response.choices[0].message.content)
@@ -236,7 +252,7 @@ Import [postman/vector-engine-api.postman_collection.json](postman/vector-engine
 then set these collection variables:
 
 - `base_url`: `https://www.vectronode.com`
-- `api_key`: your Vector Engine API key
+- `api_key`: your VectorNode API key
 - `model`: `gpt-4o-mini`
 
 The collection includes a ready-to-run chat completion request for testing the

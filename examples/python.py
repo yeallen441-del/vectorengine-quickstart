@@ -5,7 +5,7 @@ import requests
 response = requests.post(
     "https://www.vectronode.com/v1/chat/completions",
     headers={
-        "Authorization": f"Bearer {os.environ['VECTOR_ENGINE_API_KEY']}",
+        "Authorization": f"Bearer {os.environ['VECTORNODE_API_KEY']}",
         "Content-Type": "application/json",
     },
     json={
@@ -13,7 +13,7 @@ response = requests.post(
         "messages": [
             {
                 "role": "user",
-                "content": "Hello from Vector Engine API"
+                "content": "Hello from VectorNode"
             }
         ],
     },
