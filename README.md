@@ -160,6 +160,19 @@ developers, AI builders, and automation workflows:
 - production checks for API keys, base URL, model names, logging, and fallback
   behavior
 
+## 2026-06-03 AI Model Access Strategy Update
+
+Today's GitHub update adds a practical guide for developers planning model
+access before their AI product scales into multiple workflows:
+
+- [AI model access strategy for developers](AI_MODEL_ACCESS_STRATEGY.md)
+- workflow-based planning for AI apps, agents, RAG systems, chatbots, and
+  automation
+- OpenAI-compatible SDK setup using VectorNode environment variables
+- routing examples for GPT, Claude, Gemini, DeepSeek, Qwen, and other models
+- logging fields for latency, usage, errors, fallback behavior, and quality
+  review
+
 ## Why VectorNode
 
 - One API for the world's leading AI models
@@ -212,6 +225,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Model switching guide for multi-model AI apps](MODEL_SWITCHING_GUIDE.md)
 - [AI workflow gateway for agents, RAG apps, and chatbots](AI_WORKFLOW_GATEWAY.md)
 - [VectorNode model access layer quickstart](MODEL_ACCESS_LAYER_QUICKSTART.md)
+- [AI model access strategy for developers](AI_MODEL_ACCESS_STRATEGY.md)
 
 ## Migration Guide
 
