@@ -173,6 +173,19 @@ access before their AI product scales into multiple workflows:
 - logging fields for latency, usage, errors, fallback behavior, and quality
   review
 
+## 2026-06-04 AI Automation Workflow Update
+
+Today's GitHub update adds a developer guide for building AI automation
+workflows with one organized model access layer:
+
+- [AI automation workflows with a unified model access layer](AI_AUTOMATION_WORKFLOWS.md)
+- workflow design for classification, summarization, JSON output, agent
+  planning, translation, and content drafting
+- OpenAI-compatible Python example using VectorNode environment variables
+- model selection examples for GPT, Claude, Gemini, DeepSeek, Qwen, and other
+  model families
+- validation and logging fields for production automation workflows
+
 ## Why VectorNode
 
 - One API for the world's leading AI models
@@ -226,6 +239,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI workflow gateway for agents, RAG apps, and chatbots](AI_WORKFLOW_GATEWAY.md)
 - [VectorNode model access layer quickstart](MODEL_ACCESS_LAYER_QUICKSTART.md)
 - [AI model access strategy for developers](AI_MODEL_ACCESS_STRATEGY.md)
+- [AI automation workflows with a unified model access layer](AI_AUTOMATION_WORKFLOWS.md)
 
 ## Migration Guide
 
