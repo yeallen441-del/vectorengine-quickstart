@@ -2,9 +2,9 @@
 
 AI API cost grows quickly when a product moves from testing to real users.
 This guide shows a practical way to control GPT, Claude, Gemini, DeepSeek,
-Qwen, and other model usage through one OpenAI-compatible gateway.
+Qwen, and other model usage through one unified AI model access layer.
 
-Vector Engine API lets developers keep the OpenAI SDK request shape while
+VectorNode lets developers keep the OpenAI SDK request shape while
 testing different model families behind the same base URL. That makes it easier
 to compare quality, latency, and price before choosing a production default.
 
@@ -14,10 +14,10 @@ Do not hard-code model names inside product logic. Use environment variables so
 you can change the default model without a deploy.
 
 ```bash
-export VECTOR_ENGINE_API_KEY="YOUR_API_KEY"
-export VECTOR_ENGINE_BASE_URL="https://www.vectronode.com/v1"
-export VECTOR_ENGINE_DEFAULT_MODEL="gpt-4o-mini"
-export VECTOR_ENGINE_LOW_COST_MODEL="deepseek-chat"
+export VECTORNODE_API_KEY="YOUR_API_KEY"
+export VECTORNODE_BASE_URL="https://www.vectronode.com/v1"
+export VECTORNODE_DEFAULT_MODEL="gpt-4o-mini"
+export VECTORNODE_EFFICIENT_MODEL="deepseek-chat"
 ```
 
 Python:
@@ -28,11 +28,11 @@ from openai import OpenAI
 
 
 client = OpenAI(
-    api_key=os.environ["VECTOR_ENGINE_API_KEY"],
-    base_url=os.getenv("VECTOR_ENGINE_BASE_URL", "https://www.vectronode.com/v1"),
+    api_key=os.environ["VECTORNODE_API_KEY"],
+    base_url=os.getenv("VECTORNODE_BASE_URL", "https://www.vectronode.com/v1"),
 )
 
-model = os.getenv("VECTOR_ENGINE_DEFAULT_MODEL", "gpt-4o-mini")
+model = os.getenv("VECTORNODE_DEFAULT_MODEL", "gpt-4o-mini")
 
 response = client.chat.completions.create(
     model=model,
@@ -52,7 +52,7 @@ Use stronger models for:
 - customer-facing answers
 - high-value coding or analysis tasks
 
-Use lower-cost models for:
+Use efficient models for:
 
 - drafts
 - classification
@@ -82,20 +82,20 @@ FEATURE_TOKEN_LIMITS = {
 
 Start conservative, then raise limits only for features where quality improves.
 
-## 4. Use a Low-Cost Fallback Path
+## 4. Use a Cost-Aware Fallback Path
 
-When cost matters more than maximum quality, route the request to a cheaper
-model.
+When cost matters more than maximum quality, route the request to a more
+efficient model.
 
 ```python
 def choose_model(user_tier: str, feature: str) -> str:
     if user_tier == "free":
-        return os.getenv("VECTOR_ENGINE_LOW_COST_MODEL", "deepseek-chat")
+        return os.getenv("VECTORNODE_EFFICIENT_MODEL", "deepseek-chat")
 
     if feature in {"classification", "draft", "summary"}:
-        return os.getenv("VECTOR_ENGINE_LOW_COST_MODEL", "deepseek-chat")
+        return os.getenv("VECTORNODE_EFFICIENT_MODEL", "deepseek-chat")
 
-    return os.getenv("VECTOR_ENGINE_DEFAULT_MODEL", "gpt-4o-mini")
+    return os.getenv("VECTORNODE_DEFAULT_MODEL", "gpt-4o-mini")
 ```
 
 This pattern is useful for SaaS tools, AI agents, RAG apps, and developer
@@ -135,30 +135,23 @@ meets the product quality bar at the lowest sustainable cost.
 Use the Postman collection in this repository before changing production code:
 
 ```text
-postman/vector-engine-api.postman_collection.json
+postman/vectornode-api.postman_collection.json
 ```
 
 Recommended variables:
 
 ```text
 base_url = https://www.vectronode.com
-api_key = YOUR_VECTOR_ENGINE_API_KEY
+api_key = YOUR_VECTORNODE_API_KEY
 model = gpt-4o-mini
 ```
 
-Then test a lower-cost model with the same prompt and compare response quality.
+Then test an efficient model with the same prompt and compare response quality.
 
 ## Start Testing
 
-Create an account and test your first API request:
+Learn more:
 
 ```text
-https://www.vectronode.com/register?aff=nPRB&utm_source=github&utm_medium=cost-control&utm_campaign=developer-seo
+https://www.vectronode.com/
 ```
-
-Compare pricing before scaling traffic:
-
-```text
-https://www.vectronode.com/pricing?aff=nPRB&utm_source=github&utm_medium=cost-control&utm_campaign=developer-seo
-```
-

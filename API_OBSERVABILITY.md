@@ -4,8 +4,8 @@ AI API integration is not finished when the first request works. Once real users
 start sending traffic, teams need visibility into latency, errors, model choice,
 token usage, and fallback behavior.
 
-This guide shows a practical observability setup for apps using an
-OpenAI-compatible API gateway such as VectorNode AI.
+This guide shows a practical observability setup for apps using a unified AI
+model access layer such as VectorNode.
 
 ## Why Observability Matters
 
@@ -205,23 +205,18 @@ Start with:
 These metrics help teams decide whether to adjust model routing, token limits,
 fallback logic, or product defaults.
 
-## Where VectorNode AI Fits
+## Where VectorNode Fits
 
-VectorNode AI helps developers access GPT, Claude, Gemini, DeepSeek, Qwen, and
-other AI models through one OpenAI-compatible gateway.
+VectorNode helps developers access GPT, Claude, Gemini, DeepSeek, Qwen, and
+other AI models through one unified API.
 
 For teams building chatbots, RAG apps, agents, SaaS AI features, or
-Chinese-English AI workflows, a single gateway makes it easier to test models
-and monitor production usage without maintaining many provider-specific clients.
+Chinese-English AI workflows, a single access layer makes it easier to test
+models and monitor production usage without maintaining many provider-specific
+clients.
 
-Start testing:
-
-```text
-https://www.vectronode.com/register?aff=nPRB&utm_source=github&utm_medium=observability&utm_campaign=developer-seo
-```
-
-Compare model pricing:
+Learn more:
 
 ```text
-https://www.vectronode.com/pricing?aff=nPRB&utm_source=github&utm_medium=observability&utm_campaign=developer-seo
+https://www.vectronode.com/
 ```

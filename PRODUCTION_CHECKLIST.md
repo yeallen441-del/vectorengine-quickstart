@@ -1,9 +1,9 @@
 # Production Checklist for an OpenAI-Compatible AI API Gateway
 
 This checklist is for teams moving an AI feature from a local test to real
-users with an OpenAI-compatible API gateway.
+users with a unified AI model access layer.
 
-Vector Engine API lets developers access GPT, Claude, Gemini, DeepSeek, Qwen,
+VectorNode lets developers access GPT, Claude, Gemini, DeepSeek, Qwen,
 and other model families through one API entry point. The integration is simple,
 but production traffic still needs a clear checklist for keys, model routing,
 fallbacks, logging, latency, and cost control.
@@ -21,8 +21,8 @@ from openai import OpenAI
 
 
 client = OpenAI(
-    api_key=os.environ["VECTOR_ENGINE_API_KEY"],
-    base_url=os.getenv("VECTOR_ENGINE_BASE_URL", "https://www.vectronode.com/v1"),
+    api_key=os.environ["VECTORNODE_API_KEY"],
+    base_url=os.getenv("VECTORNODE_BASE_URL", "https://www.vectronode.com/v1"),
 )
 ```
 
@@ -32,8 +32,8 @@ Node.js:
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  apiKey: process.env.VECTOR_ENGINE_API_KEY,
-  baseURL: process.env.VECTOR_ENGINE_BASE_URL ?? "https://www.vectronode.com/v1",
+  apiKey: process.env.VECTORNODE_API_KEY,
+  baseURL: process.env.VECTORNODE_BASE_URL ?? "https://www.vectronode.com/v1",
 });
 ```
 
@@ -47,8 +47,8 @@ Production apps should not depend on only one model name.
 Start with two environment variables:
 
 ```bash
-VECTOR_ENGINE_PRIMARY_MODEL="gpt-4o-mini"
-VECTOR_ENGINE_FALLBACK_MODEL="deepseek-chat"
+VECTORNODE_PRIMARY_MODEL="gpt-4o-mini"
+VECTORNODE_FALLBACK_MODEL="deepseek-chat"
 ```
 
 Use the primary model for normal traffic and keep a fallback model ready for
@@ -57,8 +57,8 @@ temporary provider issues, quota limits, or cost-sensitive flows.
 Example routing idea:
 
 ```python
-primary_model = os.getenv("VECTOR_ENGINE_PRIMARY_MODEL", "gpt-4o-mini")
-fallback_model = os.getenv("VECTOR_ENGINE_FALLBACK_MODEL", "deepseek-chat")
+primary_model = os.getenv("VECTORNODE_PRIMARY_MODEL", "gpt-4o-mini")
+fallback_model = os.getenv("VECTORNODE_FALLBACK_MODEL", "deepseek-chat")
 ```
 
 Do not assume the backup model behaves exactly the same. Test prompts, JSON
@@ -89,14 +89,14 @@ Before changing production code, run the same request outside your app.
 Use the Postman collection in this repository:
 
 ```text
-postman/vector-engine-api.postman_collection.json
+postman/vectornode-api.postman_collection.json
 ```
 
 Set these variables:
 
 ```text
 base_url = https://www.vectronode.com
-api_key = YOUR_VECTOR_ENGINE_API_KEY
+api_key = YOUR_VECTORNODE_API_KEY
 model = gpt-4o-mini
 ```
 
@@ -150,7 +150,7 @@ Start with:
 - alerts for unusual request volume
 - model selection by user tier or feature tier
 
-Use cheaper models for drafts, classification, routing, and internal checks.
+Use more efficient models for drafts, classification, routing, and internal checks.
 Reserve stronger or more expensive models for tasks where quality matters.
 
 ## 8. Handle Common Errors Clearly
@@ -159,7 +159,7 @@ Map common errors to developer-friendly messages:
 
 | Error | Likely Cause | First Check |
 | --- | --- | --- |
-| `401 Unauthorized` | Missing or invalid API key | `VECTOR_ENGINE_API_KEY` |
+| `401 Unauthorized` | Missing or invalid API key | `VECTORNODE_API_KEY` |
 | `404 Not Found` | Wrong base URL | Use `https://www.vectronode.com/v1` |
 | model error | Model unavailable or misspelled | Test `gpt-4o-mini` first |
 | timeout | Network or model latency | Retry or fallback |
@@ -173,7 +173,7 @@ Create one smoke test that runs after deployment:
 
 ```bash
 curl https://www.vectronode.com/v1/chat/completions \
-  -H "Authorization: Bearer $VECTOR_ENGINE_API_KEY" \
+  -H "Authorization: Bearer $VECTORNODE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "gpt-4o-mini",
@@ -196,7 +196,7 @@ For the first production version, keep the setup simple:
 
 1. Use the OpenAI SDK.
 2. Set `base_url` / `baseURL` to `https://www.vectronode.com/v1`.
-3. Store `VECTOR_ENGINE_API_KEY` in your secret manager.
+3. Store `VECTORNODE_API_KEY` in your secret manager.
 4. Choose one primary model and one fallback model.
 5. Test the same request in Postman.
 6. Add latency, error, and usage logging.
@@ -207,15 +207,8 @@ language, cost, or user tier.
 
 ## Start Testing
 
-Create an account and test your first API request:
+Learn more:
 
 ```text
-https://www.vectronode.com/register?aff=nPRB&utm_source=github&utm_medium=production-checklist&utm_campaign=developer-seo
+https://www.vectronode.com/
 ```
-
-Compare pricing before sending production traffic:
-
-```text
-https://www.vectronode.com/pricing?aff=nPRB&utm_source=github&utm_medium=production-checklist&utm_campaign=developer-seo
-```
-

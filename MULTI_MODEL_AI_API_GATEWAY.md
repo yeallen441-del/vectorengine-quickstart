@@ -87,7 +87,7 @@ Common use cases include:
 The simplest way to start is to treat the gateway as the only model access layer
 your application talks to.
 
-1. Create an account on [VectorNode](https://www.vectronode.com/register).
+1. Open [VectorNode](https://www.vectronode.com/).
 2. Create or copy your API key.
 3. Configure your application with the VectorNode API base URL.
 4. Use an OpenAI-compatible SDK or HTTP client.
@@ -197,4 +197,4 @@ and response behavior.
 
 Start testing with VectorNode:
 
-[https://www.vectronode.com/register](https://www.vectronode.com/register)
+[https://www.vectronode.com/](https://www.vectronode.com/)

@@ -7,7 +7,7 @@ embeddings, reranking, tool calling, search, and model fallback.
 This guide explains how to plan a multimodal AI API layer with one
 OpenAI-compatible gateway.
 
-VectorNode AI provides one API entry point for hundreds of AI models across
+VectorNode provides one API entry point for hundreds of AI models across
 global and Chinese model providers, including GPT, Claude, Gemini, DeepSeek,
 Qwen, Doubao, Grok, Midjourney, Kling, Flux, MiniMax, Moonshot, Mistral,
 SiliconFlow, and more.
@@ -43,11 +43,11 @@ feature itself.
 Recommended environment variables:
 
 ```bash
-export VECTOR_ENGINE_API_KEY="YOUR_API_KEY"
-export VECTOR_ENGINE_BASE_URL="https://www.vectronode.com/v1"
-export VECTOR_ENGINE_CHAT_MODEL="gpt-4o-mini"
-export VECTOR_ENGINE_VISION_MODEL="gemini-3.1-flash-lite"
-export VECTOR_ENGINE_LOW_COST_MODEL="deepseek-v4-flash"
+export VECTORNODE_API_KEY="YOUR_API_KEY"
+export VECTORNODE_BASE_URL="https://www.vectronode.com/v1"
+export VECTORNODE_CHAT_MODEL="gpt-4o-mini"
+export VECTORNODE_VISION_MODEL="gemini-3.1-flash-lite"
+export VECTORNODE_EFFICIENT_MODEL="deepseek-v4-flash"
 ```
 
 ## Use One SDK Shape Where Possible
@@ -63,12 +63,12 @@ from openai import OpenAI
 
 
 client = OpenAI(
-    api_key=os.environ["VECTOR_ENGINE_API_KEY"],
-    base_url=os.getenv("VECTOR_ENGINE_BASE_URL", "https://www.vectronode.com/v1"),
+    api_key=os.environ["VECTORNODE_API_KEY"],
+    base_url=os.getenv("VECTORNODE_BASE_URL", "https://www.vectronode.com/v1"),
 )
 
 response = client.chat.completions.create(
-    model=os.getenv("VECTOR_ENGINE_CHAT_MODEL", "gpt-4o-mini"),
+    model=os.getenv("VECTORNODE_CHAT_MODEL", "gpt-4o-mini"),
     messages=[
         {"role": "user", "content": "Summarize this product feedback."}
     ],
@@ -84,12 +84,12 @@ Node.js:
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  apiKey: process.env.VECTOR_ENGINE_API_KEY,
-  baseURL: process.env.VECTOR_ENGINE_BASE_URL || "https://www.vectronode.com/v1",
+  apiKey: process.env.VECTORNODE_API_KEY,
+  baseURL: process.env.VECTORNODE_BASE_URL || "https://www.vectronode.com/v1",
 });
 
 const response = await client.chat.completions.create({
-  model: process.env.VECTOR_ENGINE_CHAT_MODEL || "gpt-4o-mini",
+  model: process.env.VECTORNODE_CHAT_MODEL || "gpt-4o-mini",
   messages: [{ role: "user", content: "Summarize this product feedback." }],
   max_tokens: 240,
 });
@@ -174,7 +174,7 @@ Before changing app code, test requests through Postman with variables:
 
 ```text
 base_url = https://www.vectronode.com
-api_key = YOUR_VECTOR_ENGINE_API_KEY
+api_key = YOUR_VECTORNODE_API_KEY
 model = gpt-4o-mini
 ```
 
@@ -185,7 +185,7 @@ Then change only the model variable to compare model families.
 A practical rollout path:
 
 1. Start with one chat model.
-2. Add one low-cost model for background tasks.
+2. Add one efficient model for background tasks.
 3. Add one vision or multimodal model.
 4. Add model routing by feature.
 5. Add fallback rules.
@@ -195,20 +195,8 @@ A practical rollout path:
 
 ## Start Testing
 
-Create an account:
+Learn more:
 
 ```text
-https://www.vectronode.com/register?aff=nPRB&utm_source=github&utm_medium=multimodal-gateway&utm_campaign=developer-seo
-```
-
-Explore the model marketplace:
-
-```text
-https://www.vectronode.com/pricing?aff=nPRB&utm_source=github&utm_medium=multimodal-gateway&utm_campaign=developer-seo
-```
-
-Read the API docs:
-
-```text
-https://www.vectronode.com?aff=nPRB&utm_source=github&utm_medium=multimodal-gateway&utm_campaign=developer-seo
+https://www.vectronode.com/
 ```

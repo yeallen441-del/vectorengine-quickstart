@@ -1,11 +1,11 @@
 # Global and Chinese LLM API Gateway
 
-Vector Engine API is an OpenAI-compatible gateway for developers who want one
-API entry point for global and Chinese LLMs.
+VectorNode is an AI model access platform for developers who want one API entry
+point for global and Chinese LLMs.
 
 This guide focuses on model selection, testing strategy, and common product
 use cases. If you are already using the OpenAI SDK, keep your existing SDK
-shape and point it at the Vector Engine API base URL.
+shape and point it at the VectorNode base URL.
 
 ## Why Use One Gateway
 
@@ -40,7 +40,7 @@ https://www.vectronode.com/v1
 
 Before wiring a model into production, test these items:
 
-1. The model name is available in your Vector Engine API account.
+1. The model name is available in your VectorNode account.
 2. The request works in Postman or curl.
 3. The same request works in your application SDK.
 4. The response quality fits the use case.
@@ -58,13 +58,13 @@ from openai import OpenAI
 
 
 client = OpenAI(
-    api_key=os.environ["VECTOR_ENGINE_API_KEY"],
+    api_key=os.environ["VECTORNODE_API_KEY"],
     base_url="https://www.vectronode.com/v1",
 )
 
 models_to_test = [
-    os.getenv("VECTOR_ENGINE_GLOBAL_MODEL", "gpt-4o-mini"),
-    os.getenv("VECTOR_ENGINE_CHINESE_MODEL", "deepseek-chat"),
+    os.getenv("VECTORNODE_GLOBAL_MODEL", "gpt-4o-mini"),
+    os.getenv("VECTORNODE_CHINESE_MODEL", "deepseek-chat"),
 ]
 
 for model in models_to_test:
@@ -88,13 +88,13 @@ for model in models_to_test:
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  apiKey: process.env.VECTOR_ENGINE_API_KEY,
+  apiKey: process.env.VECTORNODE_API_KEY,
   baseURL: "https://www.vectronode.com/v1",
 });
 
 const modelsToTest = [
-  process.env.VECTOR_ENGINE_GLOBAL_MODEL ?? "gpt-4o-mini",
-  process.env.VECTOR_ENGINE_CHINESE_MODEL ?? "deepseek-chat",
+  process.env.VECTORNODE_GLOBAL_MODEL ?? "gpt-4o-mini",
+  process.env.VECTORNODE_CHINESE_MODEL ?? "deepseek-chat",
 ];
 
 for (const model of modelsToTest) {
@@ -140,12 +140,12 @@ fallbacks, or premium tiers without changing the public product flow.
 ## Suggested Environment Variables
 
 ```bash
-export VECTOR_ENGINE_API_KEY="YOUR_API_KEY"
-export VECTOR_ENGINE_GLOBAL_MODEL="gpt-4o-mini"
-export VECTOR_ENGINE_CHINESE_MODEL="deepseek-chat"
+export VECTORNODE_API_KEY="YOUR_API_KEY"
+export VECTORNODE_GLOBAL_MODEL="gpt-4o-mini"
+export VECTORNODE_CHINESE_MODEL="deepseek-chat"
 ```
 
-Always confirm available model names in your Vector Engine API dashboard before
+Always confirm available model names in your VectorNode dashboard before
 running production traffic.
 
 ## Start Testing
@@ -153,6 +153,5 @@ running production traffic.
 Create an account and test your first request:
 
 ```text
-https://www.vectronode.com/register?aff=nPRB&utm_source=github&utm_medium=global-chinese-llm-guide&utm_campaign=integration-update
+https://www.vectronode.com/
 ```
-

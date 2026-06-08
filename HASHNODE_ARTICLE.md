@@ -1,8 +1,8 @@
-# Migrating an OpenAI SDK App to an API Relay
+# Migrating an OpenAI SDK App to an AI API integration
 
-Yesterday's post covered the basic Vector Engine API offer. Today's note is
+Yesterday's post covered the basic VectorNode offer. Today's note is
 more practical: how to move an existing OpenAI SDK integration to an
-OpenAI-compatible API relay with the smallest possible code change.
+OpenAI-compatible integration with the smallest possible code change.
 
 The useful part is that most apps already have the right abstraction. If your
 code uses the OpenAI SDK, you usually only need to change the API key and the
@@ -11,7 +11,7 @@ base URL.
 ## What Changes
 
 In a direct OpenAI setup, the SDK sends requests to the default OpenAI endpoint.
-With Vector Engine API, you keep the same SDK shape and point it at:
+With VectorNode, you keep the same SDK shape and point it at:
 
 ```text
 https://www.vectronode.com/v1
@@ -41,7 +41,7 @@ import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.environ["VECTOR_ENGINE_API_KEY"],
+    api_key=os.environ["VECTORNODE_API_KEY"],
     base_url="https://www.vectronode.com/v1",
 )
 ```
@@ -54,7 +54,7 @@ response = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": "Explain API relay migration in one sentence.",
+            "content": "Explain AI API integration migration in one sentence.",
         }
     ],
 )
@@ -80,7 +80,7 @@ After:
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  apiKey: process.env.VECTOR_ENGINE_API_KEY,
+  apiKey: process.env.VECTORNODE_API_KEY,
   baseURL: "https://www.vectronode.com/v1",
 });
 ```
@@ -93,7 +93,7 @@ const response = await client.chat.completions.create({
   messages: [
     {
       role: "user",
-      content: "Explain API relay migration in one sentence.",
+      content: "Explain AI API integration migration in one sentence.",
     },
   ],
 });
@@ -107,7 +107,7 @@ Before changing a production app, verify the key and endpoint with curl:
 
 ```bash
 curl https://www.vectronode.com/v1/chat/completions \
-  -H "Authorization: Bearer $VECTOR_ENGINE_API_KEY" \
+  -H "Authorization: Bearer $VECTORNODE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "gpt-4o-mini",
@@ -125,11 +125,11 @@ curl https://www.vectronode.com/v1/chat/completions \
 I also prepared a Postman collection for quick testing. Set these variables:
 
 - `base_url`: `https://www.vectronode.com`
-- `api_key`: your Vector Engine API key
+- `api_key`: your VectorNode key
 - `model`: `gpt-4o-mini`
 
 Then run the `Chat Completions` request. This is a simple way to confirm that
-your key, model, and endpoint are working before you wire the relay into an app.
+your key, model, and endpoint are working before you wire the integration into an app.
 
 ## When This Is Useful
 
@@ -142,4 +142,4 @@ This migration pattern is useful for:
 - Apps that already use OpenAI-compatible request formats
 
 Start here:
-https://www.vectronode.com?aff=nPRB&utm_source=hashnode&utm_medium=article&utm_campaign=integration-update
+https://www.vectronode.com/

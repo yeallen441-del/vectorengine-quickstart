@@ -6,7 +6,7 @@ need to test authentication, model names, latency, fallback behavior, structured
 output, and SDK compatibility before sending production traffic.
 
 This checklist is designed for developers using an OpenAI-compatible API
-gateway such as VectorNode AI.
+gateway such as VectorNode.
 
 ## 1. Test the Base URL First
 
@@ -15,9 +15,9 @@ Most migration issues come from the base URL, not the application logic.
 Recommended setup:
 
 ```bash
-export VECTOR_ENGINE_API_KEY="YOUR_API_KEY"
-export VECTOR_ENGINE_BASE_URL="https://www.vectronode.com/v1"
-export VECTOR_ENGINE_MODEL="gpt-4o-mini"
+export VECTORNODE_API_KEY="YOUR_API_KEY"
+export VECTORNODE_BASE_URL="https://www.vectronode.com/v1"
+export VECTORNODE_MODEL="gpt-4o-mini"
 ```
 
 If your current app already uses the OpenAI SDK, keep the request shape and
@@ -33,7 +33,7 @@ Before testing many models, confirm that one simple request works.
 
 ```bash
 curl https://www.vectronode.com/v1/chat/completions \
-  -H "Authorization: Bearer $VECTOR_ENGINE_API_KEY" \
+  -H "Authorization: Bearer $VECTORNODE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "gpt-4o-mini",
@@ -60,12 +60,12 @@ from openai import OpenAI
 
 
 client = OpenAI(
-    api_key=os.environ["VECTOR_ENGINE_API_KEY"],
-    base_url=os.getenv("VECTOR_ENGINE_BASE_URL", "https://www.vectronode.com/v1"),
+    api_key=os.environ["VECTORNODE_API_KEY"],
+    base_url=os.getenv("VECTORNODE_BASE_URL", "https://www.vectronode.com/v1"),
 )
 
 response = client.chat.completions.create(
-    model=os.getenv("VECTOR_ENGINE_MODEL", "gpt-4o-mini"),
+    model=os.getenv("VECTORNODE_MODEL", "gpt-4o-mini"),
     messages=[{"role": "user", "content": "Explain API gateway testing."}],
     max_tokens=160,
 )
@@ -79,12 +79,12 @@ Node.js example:
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  apiKey: process.env.VECTOR_ENGINE_API_KEY,
-  baseURL: process.env.VECTOR_ENGINE_BASE_URL || "https://www.vectronode.com/v1",
+  apiKey: process.env.VECTORNODE_API_KEY,
+  baseURL: process.env.VECTORNODE_BASE_URL || "https://www.vectronode.com/v1",
 });
 
 const response = await client.chat.completions.create({
-  model: process.env.VECTOR_ENGINE_MODEL || "gpt-4o-mini",
+  model: process.env.VECTORNODE_MODEL || "gpt-4o-mini",
   messages: [{ role: "user", content: "Explain API gateway testing." }],
   max_tokens: 160,
 });
@@ -149,14 +149,14 @@ Use the Postman collection in this repository to test requests outside your
 application first:
 
 ```text
-postman/vector-engine-api.postman_collection.json
+postman/vectornode-api.postman_collection.json
 ```
 
 Recommended variables:
 
 ```text
 base_url = https://www.vectronode.com
-api_key = YOUR_VECTOR_ENGINE_API_KEY
+api_key = YOUR_VECTORNODE_API_KEY
 model = gpt-4o-mini
 ```
 
@@ -177,20 +177,8 @@ Before release, confirm:
 
 ## Start Testing
 
-Create an account:
+Learn more:
 
 ```text
-https://www.vectronode.com/register?aff=nPRB&utm_source=github&utm_medium=testing-checklist&utm_campaign=developer-seo
-```
-
-Compare pricing:
-
-```text
-https://www.vectronode.com/pricing?aff=nPRB&utm_source=github&utm_medium=testing-checklist&utm_campaign=developer-seo
-```
-
-Read the API docs:
-
-```text
-https://www.vectronode.com?aff=nPRB&utm_source=github&utm_medium=testing-checklist&utm_campaign=developer-seo
+https://www.vectronode.com/
 ```

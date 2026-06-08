@@ -1,7 +1,7 @@
-# OpenAI SDK API Relay Troubleshooting
+# OpenAI SDK Integration Troubleshooting
 
-Use this guide when an OpenAI SDK app does not work after switching to Vector
-Engine API.
+Use this guide when an OpenAI SDK app does not work after switching to
+VectorNode.
 
 The most common migration problems are configuration problems, not code
 problems. Check these items before changing your application logic.
@@ -9,7 +9,7 @@ problems. Check these items before changing your application logic.
 ## Quick Checklist
 
 - `base_url` / `baseURL` is `https://www.vectronode.com/v1`
-- API key is set as `VECTOR_ENGINE_API_KEY`
+- API key is set as `VECTORNODE_API_KEY`
 - The request uses `Authorization: Bearer YOUR_API_KEY`
 - The endpoint is `/v1/chat/completions`
 - The model name matches a model available in your account
@@ -25,13 +25,13 @@ Check Python:
 ```python
 import os
 
-print(bool(os.getenv("VECTOR_ENGINE_API_KEY")))
+print(bool(os.getenv("VECTORNODE_API_KEY")))
 ```
 
 Check Node.js:
 
 ```js
-console.log(Boolean(process.env.VECTOR_ENGINE_API_KEY));
+console.log(Boolean(process.env.VECTORNODE_API_KEY));
 ```
 
 If the value is `False` or `false`, your app is not loading the environment
@@ -83,13 +83,13 @@ Start with a minimal chat request:
 ```
 
 This removes app-level prompt, tool, streaming, and JSON-schema complexity while
-you validate the relay connection.
+you validate the integration connection.
 
 ## Postman Verification
 
 Before changing production code:
 
-1. Import `postman/vector-engine-api.postman_collection.json`.
+1. Import `postman/vectornode-api.postman_collection.json`.
 2. Set `api_key` in the collection variables.
 3. Keep `base_url` as `https://www.vectronode.com`.
 4. Run `POST Chat Completions`.
@@ -122,4 +122,4 @@ const client = new OpenAI({
 ```
 
 Start here:
-https://www.vectronode.com?aff=nPRB&utm_source=github&utm_medium=troubleshooting&utm_campaign=integration-update
+https://www.vectronode.com/

@@ -5,14 +5,14 @@ compare GPT, Claude, Gemini, DeepSeek, Qwen, and other models across quality,
 latency, context length, Chinese-language performance, and cost.
 
 This guide gives developers a practical model selection matrix for apps using
-an OpenAI-compatible API gateway such as VectorNode AI.
+a unified AI API platform such as VectorNode.
 
 ## Why a Model Selection Matrix Helps
 
 Without a selection matrix, teams often choose models by habit:
 
 - one model for every feature
-- no clear low-cost option for background jobs
+- no clear efficient option for background jobs
 - no separate Chinese-language testing path
 - no fallback plan when a provider is slow or unavailable
 - no way to compare quality against cost
@@ -61,7 +61,7 @@ Use these for common production traffic:
 
 The goal is stable quality at a reasonable cost.
 
-### 3. Low-Cost Utility Models
+### 3. Efficient Utility Models
 
 Use these for high-volume internal work:
 
@@ -97,7 +97,7 @@ Do not assume English performance predicts Chinese performance. Test both.
 | Chinese support reply | Qwen | DeepSeek | Chinese quality and cost |
 | Background classification | DeepSeek | Smaller GPT model | Low cost |
 | RAG answer | GPT or Claude | Qwen for Chinese RAG | Quality by language |
-| JSON extraction | Stable low-cost model | Premium model on failure | Parsing reliability |
+| JSON extraction | Stable efficient model | Premium model on failure | Parsing reliability |
 
 ## OpenAI SDK Example
 
@@ -148,7 +148,7 @@ Track:
 For production apps, do not select a model only by benchmark reputation. Select
 models by feature, language, cost tier, and failure behavior.
 
-VectorNode AI helps teams test GPT, Claude, Gemini, DeepSeek, Qwen, and other
-models through one OpenAI-compatible gateway:
+VectorNode helps teams test GPT, Claude, Gemini, DeepSeek, Qwen, and other
+models through one unified API:
 
 https://www.vectronode.com/

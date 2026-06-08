@@ -2,7 +2,7 @@
 
 Modern AI applications rarely depend on only one model. A production app may use GPT for reasoning, Claude for long context, Gemini for multimodal workflows, DeepSeek for cost-efficient generation, and Qwen for Chinese-language tasks.
 
-VectorNode AI gives developers an OpenAI-compatible API gateway so they can route requests across multiple models while keeping one integration pattern.
+VectorNode gives developers one API for multiple leading AI models, so they can route requests across GPT, Claude, Gemini, DeepSeek, Qwen, and other models while keeping one integration pattern.
 
 ## Why Model Routing Matters
 
@@ -45,7 +45,7 @@ Use this group for common application traffic:
 
 This group should balance cost, latency, and quality.
 
-### 3. Low-Cost Utility Tasks
+### 3. Efficient Utility Tasks
 
 Use this group for high-volume internal tasks:
 
@@ -138,13 +138,13 @@ For most teams, the first version does not need complex automation. Start with a
 | Final answer quality | Premium reasoning |
 | Customer support chat | Balanced daily usage |
 | Chinese-language tasks | Chinese LLMs |
-| Classification and tagging | Low-cost utility |
+| Classification and tagging | Efficient utility |
 | Long context documents | Long-context models |
 | Provider outage | Fallback chain |
 
-## Where VectorNode AI Fits
+## Where VectorNode Fits
 
-VectorNode AI helps developers access GPT, Claude, Gemini, DeepSeek, Qwen, and other models through one OpenAI-compatible gateway.
+VectorNode helps developers access GPT, Claude, Gemini, DeepSeek, Qwen, and other models through one unified API.
 
 Instead of rebuilding integrations for every provider, teams can keep one SDK pattern and focus on routing, cost control, reliability, and product quality.
 

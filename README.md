@@ -12,7 +12,7 @@ API key.
 ## 2026-05-09 Integration Update
 
 Today's update adds a cleaner quickstart path for builders who want to test an
-OpenAI-compatible API relay without changing application logic:
+OpenAI-compatible integration without changing application logic:
 
 - OpenAI SDK examples for Python and Node.js
 - Environment-variable based examples for curl, Python, and JavaScript
@@ -20,11 +20,11 @@ OpenAI-compatible API relay without changing application logic:
 - A short migration path for apps that already use `base_url` / `baseURL`
 
 Start here:
-https://www.vectronode.com?aff=nPRB&utm_source=github&utm_medium=repo&utm_campaign=integration-update
+https://www.vectronode.com/
 
 ## 2026-05-11 Troubleshooting Update
 
-Today's GitHub update is for developers who are already testing an API relay and
+Today's GitHub update is for developers who are already testing an AI API integration and
 need fast answers when something fails:
 
 - [OpenAI SDK migration troubleshooting](TROUBLESHOOTING.md)
@@ -62,7 +62,7 @@ rewriting their OpenAI SDK integration:
 - [AI API cost control guide](COST_CONTROL.md)
 - model selection by feature and user tier
 - token limits for chat, RAG, agents, and background jobs
-- low-cost fallback patterns for GPT, Claude, Gemini, DeepSeek, and Qwen
+- cost-aware fallback patterns for GPT, Claude, Gemini, DeepSeek, and Qwen
 - Postman verification before scaling traffic
 
 ## 2026-05-17 AI API Observability Update
@@ -290,7 +290,7 @@ print(response.choices[0].message.content)
 
 ## Postman
 
-Import [postman/vector-engine-api.postman_collection.json](postman/vector-engine-api.postman_collection.json),
+Import [postman/vectornode-api.postman_collection.json](postman/vectornode-api.postman_collection.json),
 then set these collection variables:
 
 - `base_url`: `https://www.vectronode.com`

@@ -5,7 +5,7 @@ workflows. A chatbot may need fast answers, a RAG application may need stronger
 reasoning over retrieved documents, and an AI agent may need reliable planning,
 tool use, and structured output.
 
-VectorNode is a multi-model AI API gateway for developers. It helps teams access
+VectorNode is an AI model access platform for developers. It helps teams access
 GPT, Claude, Gemini, DeepSeek, Qwen, and other models through one
 developer-friendly API platform.
 
@@ -45,7 +45,7 @@ Backend product service
   |
 AI workflow service
   |
-VectorNode multi-model AI API gateway
+VectorNode unified AI model access layer
   |
 GPT / Claude / Gemini / DeepSeek / Qwen / other models
 ```
@@ -237,10 +237,9 @@ Use this checklist before routing production traffic:
 AI agents, RAG applications, and chatbots need more than one model decision.
 They need a maintainable model access layer.
 
-VectorNode gives developers one OpenAI-compatible AI API gateway for working
-with GPT, Claude, Gemini, DeepSeek, Qwen, and other models. This helps teams
-build multi-model AI apps while keeping model testing, routing, and fallback
-behavior easier to manage.
+VectorNode gives developers one API for GPT, Claude, Gemini, DeepSeek, Qwen,
+and other models. This helps teams build multi-model AI apps while keeping
+model testing, routing, and fallback behavior easier to manage.
 
 Start testing with VectorNode:
 

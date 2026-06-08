@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "Vector Engine API Quickstart",
-    "description": "OpenAI-compatible API quickstart for Vector Engine API. Import this collection, set `api_key`, and run the chat completions request to validate your integration. Start here: https://www.vectronode.com?aff=nPRB&utm_source=postman&utm_medium=collection&utm_campaign=integration-update",
+    "name": "VectorNode Quickstart",
+    "description": "OpenAI-compatible API quickstart for VectorNode. Import this collection, set `api_key`, and run the chat completions request to validate your integration. Start here: https://www.vectronode.com/",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
@@ -36,7 +36,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"model\": \"{{model}}\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a concise API assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Hello from Vector Engine API. Reply in one short sentence.\"\n    }\n  ]\n}",
+          "raw": "{\n  \"model\": \"{{model}}\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a concise API assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Hello from VectorNode. Reply in one short sentence.\"\n    }\n  ]\n}",
           "options": {
             "raw": {
               "language": "json"
