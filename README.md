@@ -186,6 +186,19 @@ workflows with one organized model access layer:
   model families
 - validation and logging fields for production automation workflows
 
+## 2026-06-08 Model-Agnostic AI App Update
+
+Today's GitHub update adds a developer guide for building AI applications that
+are not locked into one fixed model connection:
+
+- [Model-agnostic AI apps with one API layer](MODEL_AGNOSTIC_AI_APPS.md)
+- workflow-based model routing for chatbots, RAG apps, agents, code help,
+  content workflows, and automation tasks
+- OpenAI-compatible Python example using VectorNode environment variables
+- structured output validation for JSON-driven workflows
+- logging fields for model name, latency, status, token usage, validation, and
+  fallback behavior
+
 ## Why VectorNode
 
 - One API for the world's leading AI models
@@ -240,6 +253,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [VectorNode model access layer quickstart](MODEL_ACCESS_LAYER_QUICKSTART.md)
 - [AI model access strategy for developers](AI_MODEL_ACCESS_STRATEGY.md)
 - [AI automation workflows with a unified model access layer](AI_AUTOMATION_WORKFLOWS.md)
+- [Model-agnostic AI apps with one API layer](MODEL_AGNOSTIC_AI_APPS.md)
 
 ## Migration Guide
 
