@@ -199,6 +199,19 @@ are not locked into one fixed model connection:
 - logging fields for model name, latency, status, token usage, validation, and
   fallback behavior
 
+## 2026-06-09 Automation Model Access Layer Update
+
+Today's GitHub update adds a practical guide for developers building AI
+automation workflows around one configurable model access layer:
+
+- [Automation model access layer for AI workflows](AUTOMATION_MODEL_ACCESS_LAYER.md)
+- workflow contracts for classification, summaries, RAG answers, agent
+  planning, JSON extraction, and translation
+- OpenAI-compatible JavaScript example using VectorNode environment variables
+- structured output validation before downstream automation actions
+- logging fields for workflow name, model name, latency, validation result, and
+  quality review
+
 ## Why VectorNode
 
 - One API for the world's leading AI models
