@@ -212,6 +212,19 @@ automation workflows around one configurable model access layer:
 - logging fields for workflow name, model name, latency, validation result, and
   quality review
 
+## 2026-06-10 Workflow-Based Model Evaluation Update
+
+Today's GitHub update adds a developer guide for evaluating AI models by real
+product workflow instead of choosing models by reputation alone:
+
+- [Workflow-based AI model evaluation](WORKFLOW_MODEL_EVALUATION.md)
+- workflow categories for support chat, RAG answers, JSON extraction, agent
+  planning, summaries, multilingual replies, and automation decisions
+- OpenAI-compatible JavaScript evaluator using VectorNode environment variables
+- structured output validation for JSON-driven workflows
+- scoring fields for latency, output quality, instruction following, context
+  use, and human review notes
+
 ## Why VectorNode
 
 - One API for the world's leading AI models
