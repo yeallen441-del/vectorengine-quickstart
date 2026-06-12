@@ -225,6 +225,18 @@ product workflow instead of choosing models by reputation alone:
 - scoring fields for latency, output quality, instruction following, context
   use, and human review notes
 
+## 2026-06-12 Unified AI Workflow Access Update
+
+Today's GitHub update adds an implementation guide for routing multiple AI
+workflows through one configurable model access layer:
+
+- [Unified model access for AI workflows](UNIFIED_AI_WORKFLOW_ACCESS.md)
+- workflow contracts for support chat, RAG answers, and automation tasks
+- OpenAI-compatible JavaScript client using VectorNode environment variables
+- one shared workflow runner with latency, usage, and error logging
+- production checks for model configuration, structured output, privacy,
+  retries, and workflow-specific evaluation
+
 ## Why VectorNode
 
 - One API for the world's leading AI models
@@ -280,6 +292,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI model access strategy for developers](AI_MODEL_ACCESS_STRATEGY.md)
 - [AI automation workflows with a unified model access layer](AI_AUTOMATION_WORKFLOWS.md)
 - [Model-agnostic AI apps with one API layer](MODEL_AGNOSTIC_AI_APPS.md)
+- [Unified model access for AI workflows](UNIFIED_AI_WORKFLOW_ACCESS.md)
 
 ## Migration Guide
 
