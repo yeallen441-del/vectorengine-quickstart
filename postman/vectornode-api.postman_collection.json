@@ -16,7 +16,7 @@
     },
     {
       "key": "model",
-      "value": "gpt-4o-mini"
+      "value": "YOUR_MODEL_ID"
     }
   ],
   "item": [
@@ -54,7 +54,7 @@
             "completions"
           ]
         },
-        "description": "Run this request after setting `api_key`. It uses the OpenAI-compatible `/v1/chat/completions` endpoint."
+        "description": "Set `api_key` and replace `YOUR_MODEL_ID` with an exact model ID from the current VectorNode catalog before running this OpenAI-compatible request."
       },
       "response": []
     }

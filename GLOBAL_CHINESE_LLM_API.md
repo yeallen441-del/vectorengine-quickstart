@@ -1,11 +1,11 @@
 # Global and Chinese LLM API Gateway
 
-VectorNode is an AI model access platform for developers who want one API entry
-point for global and Chinese LLMs.
+VectorNode is a pay-as-you-go AI model access platform for developers who want
+to test and access global and Chinese LLMs from one account.
 
 This guide focuses on model selection, testing strategy, and common product
-use cases. If you are already using the OpenAI SDK, keep your existing SDK
-shape and point it at the VectorNode base URL.
+use cases. For supported OpenAI-compatible models, existing OpenAI SDK users
+can keep a familiar SDK shape and point it at the VectorNode base URL.
 
 ## Why Use One Gateway
 
@@ -63,8 +63,8 @@ client = OpenAI(
 )
 
 models_to_test = [
-    os.getenv("VECTORNODE_GLOBAL_MODEL", "gpt-4o-mini"),
-    os.getenv("VECTORNODE_CHINESE_MODEL", "deepseek-chat"),
+    os.environ["VECTORNODE_GLOBAL_MODEL"],
+    os.environ["VECTORNODE_CHINESE_MODEL"],
 ]
 
 for model in models_to_test:
@@ -93,8 +93,8 @@ const client = new OpenAI({
 });
 
 const modelsToTest = [
-  process.env.VECTORNODE_GLOBAL_MODEL ?? "gpt-4o-mini",
-  process.env.VECTORNODE_CHINESE_MODEL ?? "deepseek-chat",
+  process.env.VECTORNODE_GLOBAL_MODEL,
+  process.env.VECTORNODE_CHINESE_MODEL,
 ];
 
 for (const model of modelsToTest) {
@@ -141,8 +141,8 @@ fallbacks, or premium tiers without changing the public product flow.
 
 ```bash
 export VECTORNODE_API_KEY="YOUR_API_KEY"
-export VECTORNODE_GLOBAL_MODEL="gpt-4o-mini"
-export VECTORNODE_CHINESE_MODEL="deepseek-chat"
+export VECTORNODE_GLOBAL_MODEL="YOUR_GLOBAL_MODEL_ID"
+export VECTORNODE_CHINESE_MODEL="YOUR_CHINESE_MODEL_ID"
 ```
 
 Always confirm available model names in your VectorNode dashboard before

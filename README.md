@@ -1,13 +1,19 @@
-# VectorNode API Quickstart
+# VectorNode AI Model Access Platform
 
-VectorNode is an AI model access platform for developers, AI builders, and
+VectorNode is a pay-as-you-go multi-model AI API platform for developers
+building with text, image, video, and audio models.
+
+Use one VectorNode account to test and access hundreds of supported AI models
+through developer-friendly APIs. The platform is designed for independent
+developers, small AI teams, AI applications, agents, RAG systems, chatbots, and
 automation workflows.
 
-One API for the world's leading AI models. Access GPT, Claude, Gemini,
-DeepSeek, Qwen, and more through a unified, OpenAI-compatible API built for
-developers, AI apps, and automation workflows. If your app already uses the
-OpenAI SDK, you can usually switch by changing the `base_url` / `baseURL` and
-API key.
+VectorNode supports GPT, Claude, Gemini, DeepSeek, Qwen, and other model
+families. Available models, routes, API formats, and pricing can change, so
+always confirm the current model catalog before production deployment.
+
+- Website: https://www.vectronode.com/
+- Model catalog and pricing: https://www.vectronode.com/pricing
 
 ## 2026-05-09 Integration Update
 
@@ -237,54 +243,69 @@ workflows through one configurable model access layer:
 - production checks for model configuration, structured output, privacy,
   retries, and workflow-specific evaluation
 
+## Platform Capabilities
+
+- Pay-as-you-go access with a low starting commitment
+- Text, image, video, and audio model coverage
+- Multiple route and pricing options for supported models
+- Playground testing before application integration
+- OpenAI-compatible APIs for supported text and chat models
+- Additional API formats for model categories with different request patterns
+- Centralized model testing, usage tracking, and integration management
+
+OpenAI compatibility is one technical integration option, not the complete
+definition of the platform. Image, video, audio, and provider-specific models
+may use different endpoints or request formats.
+
 ## Why VectorNode
 
-- One API for the world's leading AI models
-- Unified access to GPT, Claude, Gemini, DeepSeek, Qwen, and more
-- OpenAI-compatible `/v1/chat/completions` endpoint
+- One account for hundreds of supported AI models
+- Access to GPT, Claude, Gemini, DeepSeek, Qwen, and more
+- Multimodal coverage across text, image, video, and audio
+- Flexible routes and pricing options for supported models
 - Developer-friendly setup for AI apps and automation workflows
 - Built for chatbots, RAG apps, agents, model testing, and model switching
 
-## Quick Start
+## OpenAI-Compatible Quick Start
 
 Set your API key:
 
 ```bash
 export VECTORNODE_API_KEY="YOUR_API_KEY"
+export VECTORNODE_MODEL="YOUR_MODEL_ID"
 ```
 
-Call the OpenAI-compatible endpoint:
+Choose an exact model ID from the current VectorNode catalog, then call the
+OpenAI-compatible endpoint:
 
 ```bash
 curl https://www.vectronode.com/v1/chat/completions \
   -H "Authorization: Bearer $VECTORNODE_API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{
-    "model": "gpt-4o-mini",
-    "messages": [
+  -d "{
+    \"model\": \"$VECTORNODE_MODEL\",
+    \"messages\": [
       {
-        "role": "user",
-        "content": "Hello from VectorNode"
+        \"role\": \"user\",
+        \"content\": \"Hello from VectorNode\"
       }
     ]
-  }'
+  }"
 ```
 
-## Examples
+## Quickstart Examples
 
 - [curl](examples/curl.sh)
 - [Python requests](examples/python.py)
 - [JavaScript fetch](examples/javascript.js)
 - [Python OpenAI SDK](examples/openai_sdk_python.py)
 - [Node.js OpenAI SDK](examples/openai_sdk_node.mjs)
+
+## Platform and Architecture Guides
+
 - [Global and Chinese LLM gateway guide](GLOBAL_CHINESE_LLM_API.md)
-- [Production checklist](PRODUCTION_CHECKLIST.md)
-- [AI API cost control](COST_CONTROL.md)
 - [Multi-model routing guide](MODEL_ROUTING.md)
-- [AI API observability](API_OBSERVABILITY.md)
-- [Model selection matrix](MODEL_SELECTION_MATRIX.md)
-- [AI API integration testing checklist](AI_API_TESTING_CHECKLIST.md)
-- [Multimodal AI API gateway guide](MULTIMODAL_AI_GATEWAY.md)
+- [Multimodal AI platform guide](MULTIMODAL_AI_GATEWAY.md)
 - [How to use a multi-model AI API gateway](MULTI_MODEL_AI_API_GATEWAY.md)
 - [Model switching guide for multi-model AI apps](MODEL_SWITCHING_GUIDE.md)
 - [AI workflow gateway for agents, RAG apps, and chatbots](AI_WORKFLOW_GATEWAY.md)
@@ -293,6 +314,14 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI automation workflows with a unified model access layer](AI_AUTOMATION_WORKFLOWS.md)
 - [Model-agnostic AI apps with one API layer](MODEL_AGNOSTIC_AI_APPS.md)
 - [Unified model access for AI workflows](UNIFIED_AI_WORKFLOW_ACCESS.md)
+
+## Production and Evaluation Guides
+
+- [Production checklist](PRODUCTION_CHECKLIST.md)
+- [AI API cost control](COST_CONTROL.md)
+- [AI API observability](API_OBSERVABILITY.md)
+- [Model selection matrix](MODEL_SELECTION_MATRIX.md)
+- [AI API integration testing checklist](AI_API_TESTING_CHECKLIST.md)
 
 ## Migration Guide
 
@@ -320,7 +349,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="YOUR_MODEL_ID",
     messages=[{"role": "user", "content": "Hello from VectorNode"}],
 )
 
@@ -334,7 +363,7 @@ then set these collection variables:
 
 - `base_url`: `https://www.vectronode.com`
 - `api_key`: your VectorNode API key
-- `model`: `gpt-4o-mini`
+- `model`: an exact model ID from the current VectorNode catalog
 
 The collection includes a ready-to-run chat completion request for testing the
 API in seconds.

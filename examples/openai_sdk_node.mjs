@@ -6,7 +6,7 @@ const client = new OpenAI({
 });
 
 const response = await client.chat.completions.create({
-  model: process.env.VECTORNODE_MODEL ?? "gpt-4o-mini",
+  model: process.env.VECTORNODE_MODEL,
   messages: [
     {
       role: "user",

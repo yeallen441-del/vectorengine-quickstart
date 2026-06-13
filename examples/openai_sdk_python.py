@@ -9,7 +9,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model=os.getenv("VECTORNODE_MODEL", "gpt-4o-mini"),
+    model=os.environ["VECTORNODE_MODEL"],
     messages=[
         {
             "role": "user",

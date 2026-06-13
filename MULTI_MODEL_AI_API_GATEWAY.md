@@ -9,12 +9,14 @@ and a model that performs well with structured output.
 That is why more developer teams are moving from single-model integrations to a
 multi-model AI API architecture.
 
-[VectorNode](https://www.vectronode.com/) is a multi-model AI API gateway for
-developers. It lets teams access GPT, Claude, Gemini, DeepSeek, Qwen, and other
-AI models through one developer-friendly API platform. The goal is simple: keep
-the application integration stable while giving developers more flexibility for
-model testing, model switching, AI apps, agents, RAG systems, and chatbot use
-cases.
+[VectorNode](https://www.vectronode.com/) is a pay-as-you-go multi-model AI API
+platform for developers. One VectorNode account can be used to test and access
+supported text, image, video, and audio models, including GPT, Claude, Gemini,
+DeepSeek, Qwen, and other model families.
+
+An AI API gateway is one technical pattern supported by the platform. It helps
+developers keep application integrations stable while testing and switching
+models for AI apps, agents, RAG systems, chatbots, and automation workflows.
 
 ## The Pain Point
 
@@ -42,13 +44,14 @@ A multi-model AI API gateway gives your application one stable access layer for
 multiple model families. Instead of wiring every model directly into your app,
 your backend talks to one API platform.
 
-For teams that already use the OpenAI SDK or an OpenAI-compatible API format,
-this can be especially helpful. You can keep a familiar integration shape while
-testing different models behind the same application boundary.
+For supported text and chat models, teams that already use the OpenAI SDK or an
+OpenAI-compatible API format can keep a familiar integration shape while
+testing different models behind the same application boundary. Other model
+categories may use different endpoints or request formats.
 
-VectorNode is built around this workflow:
+VectorNode supports this workflow as part of a broader model access platform:
 
-- Access multiple AI models from one API platform.
+- Test and access multiple AI models from one account.
 - Use OpenAI-compatible API integration patterns.
 - Test different models without redesigning the application.
 - Switch models by feature, workload, or evaluation result.
@@ -169,11 +172,11 @@ An AI API gateway is a layer between your application and different AI models.
 It helps centralize model access, authentication, routing, testing, and
 integration management.
 
-### Is VectorNode an OpenAI-compatible API?
+### Does VectorNode support OpenAI-compatible integrations?
 
-VectorNode supports OpenAI-compatible API workflows, which makes it easier for
-developers who already use OpenAI-style SDKs, request formats, and chat
-completion patterns.
+Yes. VectorNode supports OpenAI-compatible workflows for supported models and
+use cases, which makes it easier for developers who already use OpenAI-style
+SDKs, request formats, and chat-completion patterns.
 
 ### Can I use VectorNode for AI agents?
 
@@ -198,3 +201,7 @@ and response behavior.
 Start testing with VectorNode:
 
 [https://www.vectronode.com/](https://www.vectronode.com/)
+
+Review current models, routes, and pricing:
+
+[https://www.vectronode.com/pricing](https://www.vectronode.com/pricing)

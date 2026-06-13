@@ -3,10 +3,12 @@
 This checklist is for teams moving an AI feature from a local test to real
 users with a unified AI model access layer.
 
-VectorNode lets developers access GPT, Claude, Gemini, DeepSeek, Qwen,
-and other model families through one API entry point. The integration is simple,
-but production traffic still needs a clear checklist for keys, model routing,
-fallbacks, logging, latency, and cost control.
+VectorNode gives developers one platform account for testing and accessing GPT,
+Claude, Gemini, DeepSeek, Qwen, and other supported model families.
+OpenAI-compatible integration is available for supported text and chat
+workflows, while other model categories may use different endpoints or request
+formats. Production traffic still needs a clear checklist for keys, model
+routing, fallbacks, logging, latency, and cost control.
 
 ## 1. Keep the SDK Integration Small
 
@@ -47,8 +49,8 @@ Production apps should not depend on only one model name.
 Start with two environment variables:
 
 ```bash
-VECTORNODE_PRIMARY_MODEL="gpt-4o-mini"
-VECTORNODE_FALLBACK_MODEL="deepseek-chat"
+VECTORNODE_PRIMARY_MODEL="YOUR_PRIMARY_MODEL_ID"
+VECTORNODE_FALLBACK_MODEL="YOUR_FALLBACK_MODEL_ID"
 ```
 
 Use the primary model for normal traffic and keep a fallback model ready for
@@ -57,8 +59,8 @@ temporary provider issues, quota limits, or cost-sensitive flows.
 Example routing idea:
 
 ```python
-primary_model = os.getenv("VECTORNODE_PRIMARY_MODEL", "gpt-4o-mini")
-fallback_model = os.getenv("VECTORNODE_FALLBACK_MODEL", "deepseek-chat")
+primary_model = os.environ["VECTORNODE_PRIMARY_MODEL"]
+fallback_model = os.environ["VECTORNODE_FALLBACK_MODEL"]
 ```
 
 Do not assume the backup model behaves exactly the same. Test prompts, JSON
@@ -97,7 +99,7 @@ Set these variables:
 ```text
 base_url = https://www.vectronode.com
 api_key = YOUR_VECTORNODE_API_KEY
-model = gpt-4o-mini
+model = YOUR_MODEL_ID
 ```
 
 If Postman works but your app fails, the issue is usually local configuration:
@@ -161,7 +163,7 @@ Map common errors to developer-friendly messages:
 | --- | --- | --- |
 | `401 Unauthorized` | Missing or invalid API key | `VECTORNODE_API_KEY` |
 | `404 Not Found` | Wrong base URL | Use `https://www.vectronode.com/v1` |
-| model error | Model unavailable or misspelled | Test `gpt-4o-mini` first |
+| model error | Model unavailable or misspelled | Copy an exact ID from the current catalog |
 | timeout | Network or model latency | Retry or fallback |
 | invalid JSON | Prompt or model output issue | Add validation and retry |
 
@@ -175,16 +177,16 @@ Create one smoke test that runs after deployment:
 curl https://www.vectronode.com/v1/chat/completions \
   -H "Authorization: Bearer $VECTORNODE_API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{
-    "model": "gpt-4o-mini",
-    "messages": [
+  -d "{
+    \"model\": \"$VECTORNODE_PRIMARY_MODEL\",
+    \"messages\": [
       {
-        "role": "user",
-        "content": "Reply with one sentence confirming the API gateway works."
+        \"role\": \"user\",
+        \"content\": \"Reply with one sentence confirming the API connection works.\"
       }
     ],
-    "max_tokens": 60
-  }'
+    \"max_tokens\": 60
+  }"
 ```
 
 This catches key, base URL, and model-routing problems before users report

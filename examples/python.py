@@ -9,7 +9,7 @@ response = requests.post(
         "Content-Type": "application/json",
     },
     json={
-        "model": "gpt-4o-mini",
+        "model": os.environ["VECTORNODE_MODEL"],
         "messages": [
             {
                 "role": "user",

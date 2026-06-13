@@ -5,7 +5,7 @@ const response = await fetch("https://www.vectronode.com/v1/chat/completions", {
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
-    model: "gpt-4o-mini",
+    model: process.env.VECTORNODE_MODEL,
     messages: [
       {
         role: "user",

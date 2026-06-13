@@ -1,16 +1,20 @@
-# Multimodal AI API Gateway Guide
+# Building Multimodal AI Products with a Model Access Platform
 
 Many AI products start with one chat-completions request. As the product grows,
 teams often need more than chat: vision, image generation, speech, video,
 embeddings, reranking, tool calling, search, and model fallback.
 
-This guide explains how to plan a multimodal AI API layer with one
-OpenAI-compatible gateway.
+This guide explains how to plan a multimodal AI access layer without assuming
+that every model category uses the same endpoint or request format.
 
-VectorNode provides one API entry point for hundreds of AI models across
-global and Chinese model providers, including GPT, Claude, Gemini, DeepSeek,
-Qwen, Doubao, Grok, Midjourney, Kling, Flux, MiniMax, Moonshot, Mistral,
-SiliconFlow, and more.
+VectorNode is a pay-as-you-go multi-model AI API platform. One account can be
+used to test and access hundreds of supported models across text, image, video,
+and audio workflows.
+
+Supported text and chat models can use familiar OpenAI-compatible integration
+patterns. Image, video, audio, and provider-specific models may use different
+endpoints or request formats. Check the current catalog and documentation
+before implementing a production workflow.
 
 ## Why Multimodal Access Matters
 
@@ -25,8 +29,9 @@ A modern AI app may need different model types for different product features:
 - search-enabled answers
 - agent workflows with tool calls
 
-Using a separate integration for each provider creates operational overhead.
-A gateway layer keeps the app code simpler while still allowing model choice.
+Using a separate account, balance, and integration for every provider creates
+operational overhead. A model access layer keeps product code simpler while
+still allowing model choice.
 
 ## Start with a Stable API Boundary
 
@@ -34,7 +39,7 @@ Keep product code focused on business logic. Put model access behind a small
 service boundary:
 
 ```text
-app feature -> ai service -> gateway client -> selected model
+app feature -> ai service -> model access client -> selected model
 ```
 
 This makes it easier to change the model behind a feature without rewriting the
@@ -45,9 +50,9 @@ Recommended environment variables:
 ```bash
 export VECTORNODE_API_KEY="YOUR_API_KEY"
 export VECTORNODE_BASE_URL="https://www.vectronode.com/v1"
-export VECTORNODE_CHAT_MODEL="gpt-4o-mini"
-export VECTORNODE_VISION_MODEL="gemini-3.1-flash-lite"
-export VECTORNODE_EFFICIENT_MODEL="deepseek-v4-flash"
+export VECTORNODE_CHAT_MODEL="YOUR_CHAT_MODEL_ID"
+export VECTORNODE_VISION_MODEL="YOUR_VISION_MODEL_ID"
+export VECTORNODE_MEDIA_MODEL="YOUR_IMAGE_OR_VIDEO_MODEL_ID"
 ```
 
 ## Use One SDK Shape Where Possible
@@ -68,7 +73,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model=os.getenv("VECTORNODE_CHAT_MODEL", "gpt-4o-mini"),
+    model=os.environ["VECTORNODE_CHAT_MODEL"],
     messages=[
         {"role": "user", "content": "Summarize this product feedback."}
     ],
@@ -89,7 +94,7 @@ const client = new OpenAI({
 });
 
 const response = await client.chat.completions.create({
-  model: process.env.VECTORNODE_CHAT_MODEL || "gpt-4o-mini",
+  model: process.env.VECTORNODE_CHAT_MODEL,
   messages: [{ role: "user", content: "Summarize this product feedback." }],
   max_tokens: 240,
 });
@@ -117,14 +122,15 @@ This keeps model choice tied to business value.
 
 ## Plan for Global and Chinese Model Coverage
 
-Many teams need both global models and Chinese-language models:
+Many teams need both global models and Chinese-language models. Depending on
+the current catalog, model families may include:
 
 - GPT, Claude, Gemini, and Grok for global use cases
 - DeepSeek, Qwen, Doubao, Moonshot, GLM, Wenxin, and Spark for Chinese-language
   and regional workflows
-- Midjourney, Kling, Flux, Vidu, and MiniMax for image and video tasks
+- supported image, video, and audio model families for media workflows
 
-One gateway makes it easier to test these options side by side.
+One platform account makes it easier to test available options side by side.
 
 ## Test Pricing and Throughput Before Scaling
 
@@ -168,14 +174,21 @@ This data helps answer practical questions:
 - Which fallback paths are actually being used?
 - Which models should be promoted to production defaults?
 
-## Use Postman for Provider-Agnostic Testing
+## Use the Playground Before Integration
 
-Before changing app code, test requests through Postman with variables:
+Use the VectorNode Playground to confirm that a model fits the workflow before
+adding it to application code. Record the exact model ID, route, request format,
+response shape, and expected pricing for the selected option.
+
+## Use Postman for OpenAI-Compatible Testing
+
+For supported OpenAI-compatible text and chat models, test requests through
+Postman with variables:
 
 ```text
 base_url = https://www.vectronode.com
 api_key = YOUR_VECTORNODE_API_KEY
-model = gpt-4o-mini
+model = YOUR_MODEL_ID
 ```
 
 Then change only the model variable to compare model families.
@@ -199,4 +212,10 @@ Learn more:
 
 ```text
 https://www.vectronode.com/
+```
+
+Review the current catalog and pricing:
+
+```text
+https://www.vectronode.com/pricing
 ```
