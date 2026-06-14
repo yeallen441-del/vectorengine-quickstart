@@ -243,6 +243,18 @@ workflows through one configurable model access layer:
 - production checks for model configuration, structured output, privacy,
   retries, and workflow-specific evaluation
 
+## 2026-06-14 Multimodal Model Evaluation Harness Update
+
+Today's GitHub update adds a TypeScript implementation guide for evaluating
+text, image, video, and audio models with repeatable product tests:
+
+- [Multimodal AI model evaluation harness](MULTIMODAL_MODEL_EVALUATION_HARNESS.md)
+- configuration-driven model and route targets
+- workflow-based test cases for text and media generation
+- adapters for OpenAI-compatible text requests and specialized model formats
+- asynchronous job handling for image, video, and audio workflows
+- result fields for success rate, latency, validation, route, and media metadata
+
 ## Platform Capabilities
 
 - Pay-as-you-go access with a low starting commitment
@@ -322,6 +334,8 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI API observability](API_OBSERVABILITY.md)
 - [Model selection matrix](MODEL_SELECTION_MATRIX.md)
 - [AI API integration testing checklist](AI_API_TESTING_CHECKLIST.md)
+- [Workflow-based AI model evaluation](WORKFLOW_MODEL_EVALUATION.md)
+- [Multimodal AI model evaluation harness](MULTIMODAL_MODEL_EVALUATION_HARNESS.md)
 
 ## Migration Guide
 
