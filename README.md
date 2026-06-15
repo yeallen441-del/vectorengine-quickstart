@@ -255,6 +255,17 @@ text, image, video, and audio models with repeatable product tests:
 - asynchronous job handling for image, video, and audio workflows
 - result fields for success rate, latency, validation, route, and media metadata
 
+## 2026-06-15 Capability-Based Model Router Update
+
+Today's GitHub update adds a TypeScript implementation guide for keeping
+product workflows separate from model-specific APIs:
+
+- [Capability-based model router for multimodal AI apps](CAPABILITY_BASED_MODEL_ROUTER.md)
+- configurable routing for chat, RAG, agent, image, video, and audio workflows
+- adapters for OpenAI-compatible text requests and asynchronous media jobs
+- fallback rules based on retryable errors and workflow output validation
+- usage records for model, route, latency, cost, errors, and fallback behavior
+
 ## Platform Capabilities
 
 - Pay-as-you-go access with a low starting commitment
@@ -326,6 +337,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI automation workflows with a unified model access layer](AI_AUTOMATION_WORKFLOWS.md)
 - [Model-agnostic AI apps with one API layer](MODEL_AGNOSTIC_AI_APPS.md)
 - [Unified model access for AI workflows](UNIFIED_AI_WORKFLOW_ACCESS.md)
+- [Capability-based model router for multimodal AI apps](CAPABILITY_BASED_MODEL_ROUTER.md)
 
 ## Production and Evaluation Guides
 
