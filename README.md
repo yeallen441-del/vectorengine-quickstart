@@ -266,6 +266,33 @@ product workflows separate from model-specific APIs:
 - fallback rules based on retryable errors and workflow output validation
 - usage records for model, route, latency, cost, errors, and fallback behavior
 
+## 2026-06-16 Model Provider Complexity Update
+
+Today's GitHub update adds an operations-focused guide for small teams that
+need to reduce the complexity of working with multiple AI model providers:
+
+- [Reducing AI model provider complexity for small teams](MODEL_PROVIDER_COMPLEXITY.md)
+- capability-based planning for text, image, video, audio, agents, and RAG
+- configuration-driven model and route selection
+- adapter boundaries for OpenAI-compatible text requests and media jobs
+- operational fields for latency, usage, errors, timeouts, and output checks
+- checklist for deciding when a unified model access platform fits the team
+
+## 2026-06-23 Workflow Model Selection Update
+
+Today's GitHub update adds a practical guide for choosing AI models by product
+workflow instead of choosing one default model for every feature:
+
+- [AI model selection by workflow for chatbots, RAG, agents, and automation](WORKFLOW_MODEL_SELECTION_GUIDE.md)
+- workflow categories for chatbots, RAG answers, agents, automation, coding,
+  multilingual support, and long document work
+- evaluation signals for latency, quality, grounding, schema compliance, cost,
+  token usage, and reliability
+- TypeScript configuration for workflow-specific model candidates
+- OpenAI-compatible evaluation runner using VectorNode environment variables
+- notes for comparing global and Chinese frontier models through one
+  infrastructure layer
+
 ## Platform Capabilities
 
 - Pay-as-you-go access with a low starting commitment
@@ -338,6 +365,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Model-agnostic AI apps with one API layer](MODEL_AGNOSTIC_AI_APPS.md)
 - [Unified model access for AI workflows](UNIFIED_AI_WORKFLOW_ACCESS.md)
 - [Capability-based model router for multimodal AI apps](CAPABILITY_BASED_MODEL_ROUTER.md)
+- [Reducing AI model provider complexity for small teams](MODEL_PROVIDER_COMPLEXITY.md)
 
 ## Production and Evaluation Guides
 
@@ -347,6 +375,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Model selection matrix](MODEL_SELECTION_MATRIX.md)
 - [AI API integration testing checklist](AI_API_TESTING_CHECKLIST.md)
 - [Workflow-based AI model evaluation](WORKFLOW_MODEL_EVALUATION.md)
+- [AI model selection by workflow](WORKFLOW_MODEL_SELECTION_GUIDE.md)
 - [Multimodal AI model evaluation harness](MULTIMODAL_MODEL_EVALUATION_HARNESS.md)
 
 ## Migration Guide
