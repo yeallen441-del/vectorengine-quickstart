@@ -293,6 +293,22 @@ workflow instead of choosing one default model for every feature:
 - notes for comparing global and Chinese frontier models through one
   infrastructure layer
 
+## 2026-06-24 Multi-Model Usage Analytics Update
+
+Today's GitHub update adds a developer guide for tracking usage, cost,
+latency, fallback behavior, and reliability across multi-model AI workflows:
+
+- [Multi-model AI usage analytics for developers](MULTI_MODEL_USAGE_ANALYTICS.md)
+- usage event schema for chatbots, RAG answers, agents, automation, and
+  multilingual workflows
+- TypeScript wrapper for OpenAI-compatible chat completions with structured
+  usage logging
+- workflow budget policies for daily cost limits, token limits, and user tiers
+- daily report structure for cost, latency, errors, validation failures, and
+  fallback rate
+- analytics notes for comparing global and Chinese frontier models in real
+  product workflows
+
 ## Platform Capabilities
 
 - Pay-as-you-go access with a low starting commitment
@@ -376,6 +392,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI API integration testing checklist](AI_API_TESTING_CHECKLIST.md)
 - [Workflow-based AI model evaluation](WORKFLOW_MODEL_EVALUATION.md)
 - [AI model selection by workflow](WORKFLOW_MODEL_SELECTION_GUIDE.md)
+- [Multi-model AI usage analytics](MULTI_MODEL_USAGE_ANALYTICS.md)
 - [Multimodal AI model evaluation harness](MULTIMODAL_MODEL_EVALUATION_HARNESS.md)
 
 ## Migration Guide
