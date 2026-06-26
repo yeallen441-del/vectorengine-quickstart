@@ -309,6 +309,22 @@ latency, fallback behavior, and reliability across multi-model AI workflows:
 - analytics notes for comparing global and Chinese frontier models in real
   product workflows
 
+## 2026-06-26 Multi-Model Rollout Playbook Update
+
+Today's GitHub update adds a production rollout guide for safely testing and
+releasing model changes across multi-model AI applications:
+
+- [Multi-model AI rollout playbook for production teams](MULTI_MODEL_ROLLOUT_PLAYBOOK.md)
+- staged release plan covering smoke tests, staging evaluation, shadow tests,
+  internal canaries, production canaries, and full rollout
+- TypeScript examples for rollout configuration, canary routing, and model kill
+  switches
+- rollback triggers for latency, error rate, fallback rate, validation
+  failures, cost spikes, and quality regressions
+- rollout metrics for comparing stable and candidate models by workflow
+- notes for testing global and Chinese frontier models across English,
+  Chinese, bilingual, RAG, agent, and automation workflows
+
 ## Platform Capabilities
 
 - Pay-as-you-go access with a low starting commitment
@@ -393,6 +409,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Workflow-based AI model evaluation](WORKFLOW_MODEL_EVALUATION.md)
 - [AI model selection by workflow](WORKFLOW_MODEL_SELECTION_GUIDE.md)
 - [Multi-model AI usage analytics](MULTI_MODEL_USAGE_ANALYTICS.md)
+- [Multi-model AI rollout playbook](MULTI_MODEL_ROLLOUT_PLAYBOOK.md)
 - [Multimodal AI model evaluation harness](MULTIMODAL_MODEL_EVALUATION_HARNESS.md)
 
 ## Migration Guide
