@@ -325,6 +325,23 @@ releasing model changes across multi-model AI applications:
 - notes for testing global and Chinese frontier models across English,
   Chinese, bilingual, RAG, agent, and automation workflows
 
+## 2026-06-27 AI Model Incident Response Update
+
+Today's GitHub update adds an incident response runbook for production
+multi-model AI applications:
+
+- [AI model incident response runbook for multi-model apps](AI_MODEL_INCIDENT_RESPONSE_RUNBOOK.md)
+- severity levels for model outages, workflow degradation, latency problems,
+  validation failures, and cost spikes
+- workflow-level detection signals for chatbots, RAG answers, agents,
+  automation, JSON extraction, and multilingual replies
+- TypeScript examples for incident records, model health state, and
+  workflow-aware fallback policies
+- mitigation paths for latency incidents, structured output failures, cost
+  spikes, and Chinese or bilingual workflow regressions
+- post-incident review checklist for improving monitoring, routing, rollout,
+  and model evaluation
+
 ## Platform Capabilities
 
 - Pay-as-you-go access with a low starting commitment
@@ -410,6 +427,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI model selection by workflow](WORKFLOW_MODEL_SELECTION_GUIDE.md)
 - [Multi-model AI usage analytics](MULTI_MODEL_USAGE_ANALYTICS.md)
 - [Multi-model AI rollout playbook](MULTI_MODEL_ROLLOUT_PLAYBOOK.md)
+- [AI model incident response runbook](AI_MODEL_INCIDENT_RESPONSE_RUNBOOK.md)
 - [Multimodal AI model evaluation harness](MULTIMODAL_MODEL_EVALUATION_HARNESS.md)
 
 ## Migration Guide
