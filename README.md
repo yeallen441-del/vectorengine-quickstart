@@ -342,6 +342,22 @@ multi-model AI applications:
 - post-incident review checklist for improving monitoring, routing, rollout,
   and model evaluation
 
+## 2026-06-28 Long-Horizon Agent Evaluation Update
+
+Today's GitHub update adds a practical guide for evaluating AI agents that need
+to keep working across many steps:
+
+- [Long-horizon AI agent evaluation for multi-model apps](LONG_HORIZON_AGENT_EVALUATION.md)
+- workflow definitions for coding agents, RAG research, customer operations,
+  JSON automation, and multilingual analysis
+- TypeScript trace structures for model calls, tool calls, retries,
+  validation failures, cost, latency, and completion status
+- scoring fields for task completion, constraint retention, tool behavior, and
+  output quality
+- notes for comparing global and Chinese frontier models such as GPT, Claude,
+  Gemini, DeepSeek, Qwen, Kimi, GLM, MiniMax, and Doubao
+- guidance on long context, fallback behavior, and cost per successful task
+
 ## Platform Capabilities
 
 - Pay-as-you-go access with a low starting commitment
@@ -428,6 +444,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Multi-model AI usage analytics](MULTI_MODEL_USAGE_ANALYTICS.md)
 - [Multi-model AI rollout playbook](MULTI_MODEL_ROLLOUT_PLAYBOOK.md)
 - [AI model incident response runbook](AI_MODEL_INCIDENT_RESPONSE_RUNBOOK.md)
+- [Long-horizon AI agent evaluation](LONG_HORIZON_AGENT_EVALUATION.md)
 - [Multimodal AI model evaluation harness](MULTIMODAL_MODEL_EVALUATION_HARNESS.md)
 
 ## Migration Guide
