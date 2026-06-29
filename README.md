@@ -358,6 +358,22 @@ to keep working across many steps:
   Gemini, DeepSeek, Qwen, Kimi, GLM, MiniMax, and Doubao
 - guidance on long context, fallback behavior, and cost per successful task
 
+## 2026-06-29 AI Model Scorecard Update
+
+Today's GitHub update adds a practical scorecard guide for comparing AI models
+by workflow before making routing and production decisions:
+
+- [AI model scorecard for multi-model applications](AI_MODEL_SCORECARD.md)
+- scorecard fields for quality, instruction following, context use, format
+  validity, latency, cost, retries, fallback, language, and recommendation
+- TypeScript schema for scorecard records, evaluation cases, production gates,
+  summary reports, and cost per successful task
+- guidance for scoring English, Chinese, and bilingual workflows separately
+- workflow-based routing examples for chatbots, RAG answers, coding agents,
+  JSON automation, document analysis, and background tasks
+- notes for comparing GPT, Claude, Gemini, DeepSeek, Qwen, Kimi, GLM,
+  MiniMax, Doubao, and other model families through one infrastructure layer
+
 ## Platform Capabilities
 
 - Pay-as-you-go access with a low starting commitment
@@ -445,6 +461,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Multi-model AI rollout playbook](MULTI_MODEL_ROLLOUT_PLAYBOOK.md)
 - [AI model incident response runbook](AI_MODEL_INCIDENT_RESPONSE_RUNBOOK.md)
 - [Long-horizon AI agent evaluation](LONG_HORIZON_AGENT_EVALUATION.md)
+- [AI model scorecard](AI_MODEL_SCORECARD.md)
 - [Multimodal AI model evaluation harness](MULTIMODAL_MODEL_EVALUATION_HARNESS.md)
 
 ## Migration Guide
