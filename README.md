@@ -374,6 +374,22 @@ by workflow before making routing and production decisions:
 - notes for comparing GPT, Claude, Gemini, DeepSeek, Qwen, Kimi, GLM,
   MiniMax, Doubao, and other model families through one infrastructure layer
 
+## 2026-06-30 AI Model Catalog Update
+
+Today's GitHub update adds a practical guide for organizing model access and
+production readiness across global and Chinese frontier models:
+
+- [AI model catalog for global and Chinese frontier models](AI_MODEL_CATALOG.md)
+- catalog fields for model ID, provider family, modality, workflow fit,
+  language fit, context tier, structured output quality, latency, cost, status,
+  fallback, owner, and review date
+- TypeScript schema for catalog entries, workflow approvals, routing rules,
+  review records, validation checks, and cost profiles
+- lifecycle statuses for testing, approved, fallback-only, deprecated, and
+  disabled model choices
+- guidance for connecting catalogs to scorecards, routing decisions, usage
+  analytics, and Chinese or bilingual workflow evaluation
+
 ## Platform Capabilities
 
 - Pay-as-you-go access with a low starting commitment
@@ -462,6 +478,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [AI model incident response runbook](AI_MODEL_INCIDENT_RESPONSE_RUNBOOK.md)
 - [Long-horizon AI agent evaluation](LONG_HORIZON_AGENT_EVALUATION.md)
 - [AI model scorecard](AI_MODEL_SCORECARD.md)
+- [AI model catalog](AI_MODEL_CATALOG.md)
 - [Multimodal AI model evaluation harness](MULTIMODAL_MODEL_EVALUATION_HARNESS.md)
 
 ## Migration Guide
