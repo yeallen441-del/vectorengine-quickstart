@@ -1,12 +1,13 @@
 # VectorNode AI Model Access Platform
 
-VectorNode is a pay-as-you-go multi-model AI API platform for developers
-building with text, image, video, and audio models.
+VectorNode is a multi-model AI infrastructure platform for developers and AI
+teams building with global and Chinese frontier models across text, image,
+video, and audio workflows.
 
-Use one VectorNode account to test and access hundreds of supported AI models
-through developer-friendly APIs. The platform is designed for independent
-developers, small AI teams, AI applications, agents, RAG systems, chatbots, and
-automation workflows.
+Use one VectorNode account to test, access, manage, monitor, and optimize
+hundreds of supported AI models through developer-friendly APIs. The platform
+is designed for independent developers, small AI teams, AI applications, agents,
+RAG systems, chatbots, and automation workflows.
 
 VectorNode supports GPT, Claude, Gemini, DeepSeek, Qwen, and other model
 families. Available models, routes, API formats, and pricing can change, so
@@ -390,6 +391,22 @@ production readiness across global and Chinese frontier models:
 - guidance for connecting catalogs to scorecards, routing decisions, usage
   analytics, and Chinese or bilingual workflow evaluation
 
+## 2026-07-01 AI Model Lifecycle Management Update
+
+Today's GitHub update adds a production guide for managing model state after
+models have been added to a multi-model AI application:
+
+- [AI model lifecycle management for multi-model applications](AI_MODEL_LIFECYCLE_MANAGEMENT.md)
+- lifecycle states for testing, approved, fallback-only, deprecated, and
+  disabled model choices
+- TypeScript schemas for lifecycle records, approval gates, deprecation plans,
+  transition records, and transition validation
+- guidance for connecting lifecycle decisions to scorecards, usage analytics,
+  cost per successful task, and fallback behavior
+- notes for reviewing English, Chinese, and bilingual workflows separately
+  across GPT, Claude, Gemini, DeepSeek, Qwen, Kimi, GLM, MiniMax, Doubao, and
+  other model families
+
 ## Platform Capabilities
 
 - Pay-as-you-go access with a low starting commitment
@@ -479,6 +496,7 @@ curl https://www.vectronode.com/v1/chat/completions \
 - [Long-horizon AI agent evaluation](LONG_HORIZON_AGENT_EVALUATION.md)
 - [AI model scorecard](AI_MODEL_SCORECARD.md)
 - [AI model catalog](AI_MODEL_CATALOG.md)
+- [AI model lifecycle management](AI_MODEL_LIFECYCLE_MANAGEMENT.md)
 - [Multimodal AI model evaluation harness](MULTIMODAL_MODEL_EVALUATION_HARNESS.md)
 
 ## Migration Guide
